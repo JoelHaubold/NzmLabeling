@@ -7,9 +7,24 @@ import numpy as np
 from pathlib import Path
 
 
-def plot_day(plot_directory, df_phases_day, sdp_name, start_time):
-    l_width = 0.9
+l_width = 0.9
 
+def plot_trafostufung(df_p_day, p_counter):
+    stufungen = list(np.where(abs(df_p_day.row_dif) > 1)[0])
+    df_p_day.Value.plot(figsize=(24, 6), linewidth=l_width, markevery=stufungen, marker='o', markerfacecolor='black',
+                        label="phase" + str(p_counter))
+
+
+def plot_without_highlight(df_p_day, p_counter):
+    df_p_day.Value.plot(figsize=(24, 6), linewidth=l_width, label="phase" + str(p_counter))
+
+
+def plot_spannungsband(df_p_day, p_counter):
+    transgresions = list(np.where(df_p_day.Value > 240)[0])
+    ax = df_p_day.Value.plot(figsize=(24, 6), linewidth=l_width, label="phase" + str(p_counter))
+
+
+def plot_day(plot_directory, df_phases_day, sdp_name, start_time):
     sdp_directory = plot_directory / sdp_name
     if not os.path.exists(sdp_directory):
         os.makedirs(sdp_directory)
@@ -19,9 +34,9 @@ def plot_day(plot_directory, df_phases_day, sdp_name, start_time):
     for df_p_day in df_phases_day:  # Check if plottable
         # print(df_p_day.row_dif.where(lambda x: x > 1))
         if not df_p_day.empty:
-            print(list(np.array(np.where(abs(df_p_day.row_dif) > 1)[0])))
-            print([1792, 1924])
-            df_p_day.Value.plot(figsize=(24, 6), linewidth=l_width, markevery=list(np.where(abs(df_p_day.row_dif) > 1)[0]), marker='o', markerfacecolor='black', label="phase"+str(p_counter))
+            # print(list(np.array(np.where(abs(df_p_day.row_dif) > 1)[0])))
+            plot_trafostufung(df_p_day, p_counter)
+        p_counter = p_counter +1
     legend = plt.legend(fontsize='x-large', loc='lower left')
 
     for line in legend.get_lines():
@@ -34,6 +49,8 @@ def plot_day(plot_directory, df_phases_day, sdp_name, start_time):
 
 
 def plot_pickle2(pickle_directory, plot_directory):
+    fd = os.listdir('.')
+    print(fd)
     file_paths = os.listdir(pickle_directory)
     print(file_paths)
     for path in file_paths:
@@ -59,7 +76,7 @@ def plot_pickle2(pickle_directory, plot_directory):
 
 def main():
     pickle_directory = Path("testPickles")
-    plot_directory = Path("plots") / "max"
+    plot_directory = Path("plots") / "Trafostufung2"
     print(pickle_directory)
     plot_pickle2(pickle_directory, plot_directory)
 

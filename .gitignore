@@ -1,2 +1,6 @@
 FiN-Messdaten-LV_Spannung_Teil2/
 FiN-Messdaten-LV_Spannung_Teil2/*
+venv/
+venv/*
+.idea/
+.idea/*
