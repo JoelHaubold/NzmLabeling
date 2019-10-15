@@ -2,252 +2,54 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7c8ea58-c122-45bf-adfe-7c26d9e35e77" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/Netzzustandsmessung.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Netzzustandsmessung.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pickle_plotting.py" beforeDir="false" afterPath="$PROJECT_DIR$/pickle_plotting.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-04-11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-04-12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-04-13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-04-14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-04-15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-04-16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-04-17.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-04-18.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-04-19.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-04-20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-04-21.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-04-22.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-04-23.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-04-24.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-04-25.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-04-26.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-04-27.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-04-28.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-04-29.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-04-30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-05-01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-05-02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-05-03.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-05-04.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-05-05.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-05-06.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-05-07.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-05-08.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-05-09.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-05-10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-05-11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-05-12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-05-13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-05-14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-05-15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-05-16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-05-17.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-05-18.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-05-19.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-05-20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-05-21.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-05-22.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-05-23.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-05-24.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-05-25.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-05-26.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-05-27.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-05-28.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-05-29.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-05-30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-05-31.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-06-01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-06-02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-06-03.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-06-04.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-06-05.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-06-06.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-06-07.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-06-08.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-06-09.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-06-10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-06-11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-06-12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-06-13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-06-14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-06-15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-06-16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-06-17.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-06-18.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-06-19.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-06-20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-06-21.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-06-22.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-06-23.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-06-24.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-06-25.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-06-26.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-06-27.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-06-28.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-06-29.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-06-30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-07-01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-07-02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-07-03.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-07-04.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-07-05.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-07-06.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-07-07.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-07-08.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-07-09.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-07-10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-07-11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-07-12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-07-13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-07-14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-07-15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-07-16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-07-17.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-07-18.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-07-19.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-07-20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-07-21.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-07-22.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-07-23.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-07-24.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-07-25.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-07-26.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-07-27.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-07-28.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-07-29.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-07-30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-07-31.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-08-01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-08-02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-08-03.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-08-04.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-08-05.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-08-06.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-08-07.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-08-08.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-08-09.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-08-10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-08-11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-08-12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-08-13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-08-14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-08-15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-08-16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-08-17.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-08-18.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-08-19.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-08-20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-08-21.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-08-22.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-08-23.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-08-24.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-08-25.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-08-26.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-08-27.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-08-28.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-08-29.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-08-30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-08-31.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-09-01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-09-02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-09-03.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-09-04.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-09-05.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-09-06.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-09-07.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-09-08.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-09-09.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-09-10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-09-11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-09-12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-09-13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-09-14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-09-15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-09-16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-09-17.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-09-18.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-09-19.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-09-20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-09-21.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-09-22.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-09-23.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-09-24.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-09-25.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-09-26.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-09-27.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-09-28.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-09-29.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-09-30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-10-01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-10-02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-10-03.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-10-04.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-10-05.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-10-06.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-10-07.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-10-08.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-10-09.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-10-10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-10-11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-10-12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-10-13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-10-14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-10-15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-10-16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-10-17.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-10-18.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-10-19.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-10-20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-10-21.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-10-22.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-10-23.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-10-24.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-10-25.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-10-26.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-10-27.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-10-28.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-10-29.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-10-30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-10-31.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-11-01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-11-02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-11-03.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-11-04.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-11-05.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-11-06.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-11-07.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-11-08.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-11-09.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-11-10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-11-11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-11-12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-11-13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-11-14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-11-15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-11-16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-11-17.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-11-18.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-11-19.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-11-20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-11-21.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-11-22.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-11-23.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-11-24.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-11-25.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-11-26.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-11-27.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-11-28.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-11-29.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/max/NW000000000000000000000NBSNST0888/2017-11-30.png" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/checkData.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="629">
+              <caret line="40" column="60" selection-start-line="40" selection-start-column="60" selection-end-line="40" selection-end-column="60" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pickle_plotting.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/save_anomalies.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="578">
+              <caret line="34" column="12" lean-forward="true" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="12" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -264,7 +66,32 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="403" />
+    <option name="y" value="23" />
+    <option name="width" value="1400" />
+    <option name="height" value="1009" />
+  </component>
   <component name="ProjectId" id="1R3MO2LaFlXk7QwGiQo0oS3ptVj" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="NzmLabeling" type="b2602c69:ProjectViewProjectNode" />
+              <item name="NzmLabeling" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -419,15 +246,91 @@
     </task>
     <servers />
   </component>
+  <component name="ToolWindowManager">
+    <frame x="403" y="23" width="1400" height="1009" extended-state="0" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25373134" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="R Graphics" order="3" />
+      <window_info anchor="right" id="R Packages" order="4" />
+    </layout>
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/checkData.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="40" column="60" selection-start-line="40" selection-start-column="60" selection-end-line="40" selection-end-column="60" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pickle_plotting.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/save_anomalies.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="12" lean-forward="true" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
