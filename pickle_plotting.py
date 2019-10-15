@@ -9,10 +9,12 @@ from pathlib import Path
 
 l_width = 0.9
 
+
 def plot_trafostufung(df_p_day, p_counter):
     stufungen = list(np.where(abs(df_p_day.row_dif) > 1)[0])
     df_p_day.Value.plot(figsize=(24, 6), linewidth=l_width, markevery=stufungen, marker='o', markerfacecolor='black',
                         label="phase" + str(p_counter))
+    return len(stufungen) > 0
 
 
 def plot_without_highlight(df_p_day, p_counter):
@@ -20,8 +22,10 @@ def plot_without_highlight(df_p_day, p_counter):
 
 
 def plot_spannungsband(df_p_day, p_counter):
-    transgresions = list(np.where(df_p_day.Value > 240)[0])
-    ax = df_p_day.Value.plot(figsize=(24, 6), linewidth=l_width, label="phase" + str(p_counter))
+    transgressions = list(np.where(df_p_day.Value > 240)[0])
+    df_p_day.Value.plot(figsize=(24, 6), linewidth=l_width, markevery=transgressions, marker='o',
+                        markerfacecolor='black', label="phase" + str(p_counter))
+    return len(transgressions) > 1
 
 
 def plot_day(plot_directory, df_phases_day, sdp_name, start_time):
@@ -31,11 +35,12 @@ def plot_day(plot_directory, df_phases_day, sdp_name, start_time):
     plt.figure(1)
     plt.ylabel('Phases')
     p_counter = 1
+    relevant_plot = False
     for df_p_day in df_phases_day:  # Check if plottable
         # print(df_p_day.row_dif.where(lambda x: x > 1))
         if not df_p_day.empty:
             # print(list(np.array(np.where(abs(df_p_day.row_dif) > 1)[0])))
-            plot_trafostufung(df_p_day, p_counter)
+            relevant_plot = plot_spannungsband(df_p_day, p_counter)
         p_counter = p_counter +1
     legend = plt.legend(fontsize='x-large', loc='lower left')
 
@@ -44,7 +49,8 @@ def plot_day(plot_directory, df_phases_day, sdp_name, start_time):
 
     plot_path = plot_directory / sdp_name / start_time
 
-    plt.savefig(plot_path)
+    if relevant_plot:
+        plt.savefig(plot_path)
     plt.close(1)
 
 
@@ -76,7 +82,7 @@ def plot_pickle2(pickle_directory, plot_directory):
 
 def main():
     pickle_directory = Path("testPickles")
-    plot_directory = Path("plots") / "Trafostufung2"
+    plot_directory = Path("plots") / "Max240"
     print(pickle_directory)
     plot_pickle2(pickle_directory, plot_directory)
 
