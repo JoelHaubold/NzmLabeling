@@ -19,10 +19,18 @@ def plot_trafostufung(df_p_day, p_counter):
 
 def plot_without_highlight(df_p_day, p_counter):
     df_p_day.Value.plot(figsize=(24, 6), linewidth=l_width, label="phase" + str(p_counter))
+    return True
 
 
 def plot_spannungsband(df_p_day, p_counter):
     transgressions = list(np.where(df_p_day.Value > 240)[0])
+    df_p_day.Value.plot(figsize=(24, 6), linewidth=l_width, markevery=transgressions, marker='o',
+                        markerfacecolor='black', label="phase" + str(p_counter))
+    return len(transgressions) > 1
+
+
+def plot_phase_dif(df_p_day, p_counter):
+    transgressions = list(np.where(df_p_day.phase_dif > 1)[0])
     df_p_day.Value.plot(figsize=(24, 6), linewidth=l_width, markevery=transgressions, marker='o',
                         markerfacecolor='black', label="phase" + str(p_counter))
     return len(transgressions) > 1
@@ -36,12 +44,14 @@ def plot_day(plot_directory, df_phases_day, sdp_name, start_time):
     plt.ylabel('Phases')
     p_counter = 1
     relevant_plot = False
+
     for df_p_day in df_phases_day:  # Check if plottable
         # print(df_p_day.row_dif.where(lambda x: x > 1))
         if not df_p_day.empty:
             # print(list(np.array(np.where(abs(df_p_day.row_dif) > 1)[0])))
-            relevant_plot = plot_spannungsband(df_p_day, p_counter)
-        p_counter = p_counter + 1
+            # relevant_plot = plot_spannungsband(df_p_day, p_counter)
+            relevant_plot = plot_phase_dif(df_p_day, p_counter)
+        p_counter = p_counter +1
     legend = plt.legend(fontsize='x-large', loc='lower left')
 
     for line in legend.get_lines():
@@ -64,8 +74,17 @@ def plot_pickle2(pickle_directory, plot_directory):
         df_1 = pd.read_pickle(path / "phase1")
         # print(df_1)
         df_phases = list(map(lambda p: pd.read_pickle(path / ("phase"+p)), ['1', '2', '3']))
-        for df_p in df_phases:
+        phase_values = pd.DataFrame()
+        print('s1')
+        for i, df_p in enumerate(df_phases):
+            phase = 'p' + str(i+1)
+            phase_values[phase] = df_p.Value
             df_p['row_dif'] = df_p.Value.diff()
+        print(phase_values)
+        phase_values['max_dif'] = phase_values.apply(lambda row: max(abs(row['p1']-row['p2']), abs(row['p1']-row['p3']),
+                                                                     abs(row['p2']-row['p3'])), axis=1)
+        for df_p in df_phases:
+            df_p['phase_dif'] = phase_values['max_dif']
         print(df_phases[0])
         day = pd.Timedelta('1d')
         min_date = min(list(map(lambda df: df.index.min(), df_phases))).date()
@@ -82,7 +101,7 @@ def plot_pickle2(pickle_directory, plot_directory):
 
 def main():
     pickle_directory = Path("testPickles")
-    plot_directory = Path("plots") / "Max240"
+    plot_directory = Path("plots") / "PhaseDif1"
     print(pickle_directory)
     plot_pickle2(pickle_directory, plot_directory)
 

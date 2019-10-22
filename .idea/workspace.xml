@@ -2,9 +2,426 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7c8ea58-c122-45bf-adfe-7c26d9e35e77" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.~lock.test.xlsx#" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/anomalies/NW000000000000000000000NBSNST0888.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-04-11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-04-12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-04-13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-04-14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-04-15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-04-16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-04-17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-04-18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-04-19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-04-20.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-04-21.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-04-22.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-04-23.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-04-24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-04-25.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-04-26.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-04-27.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-04-28.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-04-29.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-04-30.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-05-01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-05-02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-05-05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-05-06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-05-07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-05-09.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-05-12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-05-13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-05-14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-05-15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-05-19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-05-20.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-05-21.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-05-22.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-05-25.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-05-26.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-05-27.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-05-28.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-05-29.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-06-02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-06-04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-06-05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-06-07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-06-11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-06-15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-06-18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-06-19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-06-20.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-06-21.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-06-22.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-06-24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-06-25.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-06-27.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-06-28.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-06-29.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-06-30.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-07-01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-07-02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-07-09.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-07-10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-07-11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-07-12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-07-14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-07-15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-07-16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-07-18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-07-20.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-07-22.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-07-23.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-07-24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-07-29.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-07-30.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-07-31.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-08-05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-08-07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-08-09.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-08-10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-08-11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-08-12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-08-13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-08-14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-08-15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-08-16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-08-18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-08-19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-08-20.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-08-23.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-08-26.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-08-27.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-08-29.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-08-30.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-08-31.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-09-01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-09-02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-09-03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-09-04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-09-05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-09-06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-09-07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-09-08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-09-09.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-09-10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-09-11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-09-12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-09-15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-09-16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-09-17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-09-18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-09-19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-09-20.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-09-21.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-09-22.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-09-23.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-09-24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-09-25.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-09-26.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-09-27.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-09-28.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-09-29.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-09-30.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-10-01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-10-02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-10-03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-10-04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-10-05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-10-06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-10-07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-10-08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-10-09.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-10-10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-10-12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-10-13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-10-14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-10-15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-10-16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-10-17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-10-18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-10-19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-10-20.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-10-21.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-10-22.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-10-23.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-10-24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-10-25.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-10-26.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-10-27.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-10-28.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-10-29.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-10-30.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-10-31.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-11-01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-11-02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-11-03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-11-04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-11-05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-11-06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-11-07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-11-08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-11-09.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-11-10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-11-11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-11-12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-11-13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-11-14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-11-15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-11-16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-11-17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-11-18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-11-19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-11-20.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-11-21.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-11-22.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-11-23.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-11-24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-11-25.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-11-26.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-11-27.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-11-28.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-11-29.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plots/PhaseDif1/NW000000000000000000000NBSNST0888/2017-11-30.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Netzzustandsmessung.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Netzzustandsmessung.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pickle_plotting.py" beforeDir="false" afterPath="$PROJECT_DIR$/pickle_plotting.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-04-11.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-04-11.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-04-12.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-04-12.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-04-13.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-04-13.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-04-14.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-04-14.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-04-15.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-04-15.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-04-16.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-04-16.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-04-17.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-04-17.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-04-18.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-04-18.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-04-19.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-04-19.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-04-20.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-04-20.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-04-21.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-04-21.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-04-22.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-04-22.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-04-23.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-04-23.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-04-24.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-04-24.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-04-25.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-04-25.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-04-26.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-04-26.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-04-27.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-04-27.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-04-28.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-04-28.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-04-29.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-04-29.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-04-30.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-04-30.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-05-01.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-05-01.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-05-02.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-05-02.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-05-03.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-05-03.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-05-04.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-05-04.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-05-05.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-05-05.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-05-06.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-05-06.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-05-07.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-05-07.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-05-08.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-05-08.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-05-09.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-05-09.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-05-10.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-05-10.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-05-11.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-05-11.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-05-12.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-05-12.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-05-13.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-05-13.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-05-14.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-05-14.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-05-15.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-05-15.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-05-16.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-05-16.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-05-17.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-05-17.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-05-18.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-05-18.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-05-19.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-05-19.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-05-20.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-05-20.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-05-21.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-05-21.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-05-22.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-05-22.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-05-23.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-05-23.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-05-24.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-05-24.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-05-25.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-05-25.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-05-26.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-05-26.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-05-27.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-05-27.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-05-28.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-05-28.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-05-29.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-05-29.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-05-30.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-05-30.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-05-31.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-05-31.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-06-01.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-06-01.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-06-02.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-06-02.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-06-03.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-06-03.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-06-04.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-06-04.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-06-05.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-06-05.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-06-06.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-06-06.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-06-07.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-06-07.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-06-08.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-06-08.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-06-09.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-06-09.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-06-10.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-06-10.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-06-11.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-06-11.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-06-12.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-06-12.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-06-13.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-06-13.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-06-14.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-06-14.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-06-15.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-06-15.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-06-16.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-06-16.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-06-17.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-06-17.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-06-18.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-06-18.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-06-19.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-06-19.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-06-20.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-06-20.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-06-21.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-06-21.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-06-22.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-06-22.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-06-23.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-06-23.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-06-24.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-06-24.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-06-25.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-06-25.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-06-26.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-06-26.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-06-27.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-06-27.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-06-28.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-06-28.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-06-29.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-06-29.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-06-30.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-06-30.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-07-01.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-07-01.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-07-02.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-07-02.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-07-03.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-07-03.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-07-04.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-07-04.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-07-05.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-07-05.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-07-06.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-07-06.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-07-07.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-07-07.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-07-08.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-07-08.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-07-09.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-07-09.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-07-10.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-07-10.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-07-11.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-07-11.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-07-12.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-07-12.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-07-13.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-07-13.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-07-14.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-07-14.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-07-15.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-07-15.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-07-16.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-07-16.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-07-17.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-07-17.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-07-18.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-07-18.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-07-19.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-07-19.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-07-20.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-07-20.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-07-21.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-07-21.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-07-22.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-07-22.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-07-23.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-07-23.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-07-24.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-07-24.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-07-25.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-07-25.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-07-26.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-07-26.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-07-27.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-07-27.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-07-28.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-07-28.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-07-29.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-07-29.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-07-30.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-07-30.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-07-31.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-07-31.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-08-01.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-08-01.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-08-02.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-08-02.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-08-03.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-08-03.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-08-04.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-08-04.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-08-05.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-08-05.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-08-06.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-08-06.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-08-07.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-08-07.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-08-08.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-08-08.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-08-09.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-08-09.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-08-10.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-08-10.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-08-11.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-08-11.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-08-12.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-08-12.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-08-13.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-08-13.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-08-14.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-08-14.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-08-15.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-08-15.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-08-16.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-08-16.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-08-17.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-08-17.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-08-18.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-08-18.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-08-19.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-08-19.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-08-20.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-08-20.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-08-21.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-08-21.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-08-22.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-08-22.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-08-23.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-08-23.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-08-24.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-08-24.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-08-25.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-08-25.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-08-26.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-08-26.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-08-27.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-08-27.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-08-28.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-08-28.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-08-29.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-08-29.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-08-30.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-08-30.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-08-31.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-08-31.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-09-01.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-09-01.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-09-02.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-09-02.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-09-03.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-09-03.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-09-04.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-09-04.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-09-05.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-09-05.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-09-06.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-09-06.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-09-07.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-09-07.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-09-08.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-09-08.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-09-09.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-09-09.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-09-10.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-09-10.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-09-11.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-09-11.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-09-12.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-09-12.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-09-13.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-09-13.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-09-14.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-09-14.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-09-15.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-09-15.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-09-16.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-09-16.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-09-17.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-09-17.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-09-18.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-09-18.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-09-19.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-09-19.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-09-20.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-09-20.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-09-21.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-09-21.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-09-22.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-09-22.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-09-23.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-09-23.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-09-24.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-09-24.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-09-25.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-09-25.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-09-26.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-09-26.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-09-27.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-09-27.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-09-28.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-09-28.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-09-29.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-09-29.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-09-30.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-09-30.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-10-01.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-10-01.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-10-02.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-10-02.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-10-03.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-10-03.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-10-04.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-10-04.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-10-05.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-10-05.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-10-06.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-10-06.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-10-07.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-10-07.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-10-08.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-10-08.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-10-09.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-10-09.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-10-10.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-10-10.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-10-11.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-10-11.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-10-12.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-10-12.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-10-13.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-10-13.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-10-14.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-10-14.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-10-15.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-10-15.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-10-16.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-10-16.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-10-17.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-10-17.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-10-18.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-10-18.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-10-19.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-10-19.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-10-20.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-10-20.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-10-21.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-10-21.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-10-22.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-10-22.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-10-23.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-10-23.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-10-24.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-10-24.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-10-25.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-10-25.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-10-26.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-10-26.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-10-27.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-10-27.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-10-28.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-10-28.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-10-29.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-10-29.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-10-30.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-10-30.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-10-31.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-10-31.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-11-01.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-11-01.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-11-02.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-11-02.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-11-03.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-11-03.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-11-04.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-11-04.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-11-05.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-11-05.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-11-06.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-11-06.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-11-07.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-11-07.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-11-08.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-11-08.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-11-09.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-11-09.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-11-10.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-11-10.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-11-11.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-11-11.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-11-12.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-11-12.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-11-13.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-11-13.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-11-14.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-11-14.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-11-15.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-11-15.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-11-16.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-11-16.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-11-17.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-11-17.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-11-18.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-11-18.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-11-19.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-11-19.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-11-20.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-11-20.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-11-21.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-11-21.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-11-22.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-11-22.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-11-23.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-11-23.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-11-24.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-11-24.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-11-25.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-11-25.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-11-26.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-11-26.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-11-27.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-11-27.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-11-28.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-11-28.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-11-29.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-11-29.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Trafostufung2/NW000000000000000000000NBSNST0888/2017-11-30.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Trafostufung1/NW000000000000000000000NBSNST0888/2017-11-30.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/save_anomalies.py" beforeDir="false" afterPath="$PROJECT_DIR$/save_anomalies.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,7 +447,7 @@
   <component name="ProjectId" id="1R3MO2LaFlXk7QwGiQo0oS3ptVj" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../gitRep/python-socket-backend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
