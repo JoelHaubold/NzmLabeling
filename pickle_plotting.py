@@ -74,17 +74,17 @@ def plot_pickle2(pickle_directory, plot_directory):
         df_1 = pd.read_pickle(path / "phase1")
         # print(df_1)
         df_phases = list(map(lambda p: pd.read_pickle(path / ("phase"+p)), ['1', '2', '3']))
-        phase_values = pd.DataFrame()
-        print('s1')
-        for i, df_p in enumerate(df_phases):
-            phase = 'p' + str(i+1)
-            phase_values[phase] = df_p.Value
-            df_p['row_dif'] = df_p.Value.diff()
-        print(phase_values)
-        phase_values['max_dif'] = phase_values.apply(lambda row: max(abs(row['p1']-row['p2']), abs(row['p1']-row['p3']),
-                                                                     abs(row['p2']-row['p3'])), axis=1)
-        for df_p in df_phases:
-            df_p['phase_dif'] = phase_values['max_dif']
+        # phase_values = pd.DataFrame()
+        # print('s1')
+        # for i, df_p in enumerate(df_phases):
+        #     phase = 'p' + str(i+1)
+        #     phase_values[phase] = df_p.Value
+        #     df_p['row_dif'] = df_p.Value.diff()
+        # print(phase_values)
+        # phase_values['max_dif'] = phase_values.apply(lambda row: max(abs(row['p1']-row['p2']), abs(row['p1']-row['p3']),
+        #                                                              abs(row['p2']-row['p3'])), axis=1)
+        # for df_p in df_phases:
+        #     df_p['phase_dif'] = phase_values['max_dif']
         print(df_phases[0])
         day = pd.Timedelta('1d')
         min_date = min(list(map(lambda df: df.index.min(), df_phases))).date()
