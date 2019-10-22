@@ -41,7 +41,7 @@ def plot_day(plot_directory, df_phases_day, sdp_name, start_time):
         if not df_p_day.empty:
             # print(list(np.array(np.where(abs(df_p_day.row_dif) > 1)[0])))
             relevant_plot = plot_spannungsband(df_p_day, p_counter)
-        p_counter = p_counter +1
+        p_counter = p_counter + 1
     legend = plt.legend(fontsize='x-large', loc='lower left')
 
     for line in legend.get_lines():
