@@ -17,7 +17,7 @@ def calculate_voltage_steps(df_phases):
         steps_up_df = df_p.iloc[steps_up, :].assign(**up_column)[[column_name]]
         steps_down_df = df_p.iloc[steps_down, :].assign(**down_column)[[column_name]]
         steps_df = pd.concat([steps_up_df, steps_down_df]).sort_index()
-        result_df = pd.concat([steps_df, result_df], axis= 1).sort_index()
+        result_df = pd.concat([steps_df, result_df], axis=1).sort_index()
         phase_counter = phase_counter + 1
     return result_df
 
