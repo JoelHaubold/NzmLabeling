@@ -6,3 +6,4 @@ venv/*
 .idea/*
 */xml
 */iml
+*.~lock*
