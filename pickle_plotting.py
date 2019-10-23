@@ -23,14 +23,14 @@ def plot_without_highlight(df_p_day, p_counter):
 
 
 def plot_spannungsband(df_p_day, p_counter):
-    transgressions = list(np.where(df_p_day.Value > 240)[0])
+    transgressions = list(np.where(df_p_day.Value < 230)[0])
     df_p_day.Value.plot(figsize=(24, 6), linewidth=l_width, markevery=transgressions, marker='o',
                         markerfacecolor='black', label="phase" + str(p_counter))
     return len(transgressions) > 1
 
 
 def plot_phase_dif(df_p_day, p_counter):
-    transgressions = list(np.where(df_p_day.phase_dif > 1)[0])
+    transgressions = list(np.where(df_p_day.phase_dif > 1.5)[0])
     df_p_day.Value.plot(figsize=(24, 6), linewidth=l_width, markevery=transgressions, marker='o',
                         markerfacecolor='black', label="phase" + str(p_counter))
     return len(transgressions) > 1
@@ -73,7 +73,7 @@ def plot_pickle2(pickle_directory, plot_directory):
         path = pickle_directory / Path(path)
         df_1 = pd.read_pickle(path / "phase1")
         # print(df_1)
-        df_phases = list(map(lambda p: pd.read_pickle(path / ("phase"+p)), ['1', '2', '3']))
+        df_phases = list(map(lambda p: pd.read_pickle(path / ("h_phase"+p)), ['1', '2', '3']))
         # phase_values = pd.DataFrame()
         # print('s1')
         # for i, df_p in enumerate(df_phases):
@@ -101,7 +101,7 @@ def plot_pickle2(pickle_directory, plot_directory):
 
 def main():
     pickle_directory = Path("testPickles")
-    plot_directory = Path("plots") / "PhaseDif1"
+    plot_directory = Path("plots") / "PhaseDif1_5"
     print(pickle_directory)
     plot_pickle2(pickle_directory, plot_directory)
 

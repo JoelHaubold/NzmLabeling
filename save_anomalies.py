@@ -58,7 +58,7 @@ def calculate_anomalies(pickle_directory, excel_file_path):
         path = pickle_directory / Path(path)
         df_phases = list(map(lambda p: pd.read_pickle(path / ("phase" + p)), ['1', '2', '3']))
         df_sdp = calculate_voltage_steps(df_phases)
-        df_sdp = calculate_voltage_range(df_phases,df_sdp)
+        df_sdp = calculate_voltage_range(df_phases, df_sdp)
         # excel_writer = pd.ExcelWriter(path=excel_file_path, datetime_format='YYYY-MM-DD HH:MM:SS')
         # df_sdp.to_excel(sheet_name=path.name, excel_writer=excel_writer)
         csv_path = Path('anomalies') / (path.name+'.csv')
@@ -68,9 +68,11 @@ def calculate_anomalies(pickle_directory, excel_file_path):
 
 
 def main():
+    x = np.array([2,5,7,3],[1,3,90,8],[5,3,8,9])
+    print(x.amax(0))
     pickle_directory = Path("testPickles")
     excel_file_path = Path("test.xlsx")
-    calculate_anomalies(pickle_directory, excel_file_path)
+    # calculate_anomalies(pickle_directory, excel_file_path)
 
 
 main()
