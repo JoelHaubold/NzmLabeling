@@ -83,36 +83,29 @@ def add_seasonal_data(pickle_dir=Path('pickles')):
     for path in file_paths:
         print(path)
         path = pickle_dir / Path(path)
-        df_phases = list(map(lambda p: pd.read_pickle(path / ("phase" + p)), ['1', '2', '3']))
-        weekday_dfs_phases = list(map(lambda p: list(map(lambda w: [], range(7))), range(3)))
+        df_phases = list(map(lambda p: pd.read_pickle(path / ("phase" + p))[['Value']], ['1', '2', '3'])) #  Sort into weekdays
+        weekday_dfs_phases = []
         min_date = min(list(map(lambda df: df.index.min(), df_phases))).date()
         max_date = max(list(map(lambda df: df.index.max(), df_phases))).date()
         for p, df_p in enumerate(df_phases):
-            phase = 'p' + str(p+1)
             for start_time in pd.date_range(min_date, max_date, freq='d'):
-                phase_day = phase + '_' + str(start_time.date())
                 end_time = start_time + day
                 df_p_day = df_p.loc[start_time:end_time]
-                weekday = start_time.weekday()
-                weekday_df = weekday_dfs_phases[p][weekday]
-                df_p_day = df_p_day.set_index(df_p_day.index.time)
-                weekday_df.append(df_p_day)
+                df_p_day_med = df_p_day.resample('1min').median().rename(columns={'Value': str(start_time.date())})
+                df_p_day_med.index = df_p_day_med.index.time
+                if len(weekday_dfs_phases) <= p:
+                    weekday_df = df_p_day_med
+                    weekday_dfs_phases.append(weekday_df)
+                else:
+                    weekday_df = weekday_dfs_phases[p]
+                    weekday_df = weekday_df.join(df_p_day_med, how='outer')
+                    weekday_dfs_phases[p] = weekday_df
         print("Split DF")
-        for p, df_p in enumerate(df_phases):
-            weekday_dfs = weekday_dfs_phases[p]
-            for w, weekday_df_list in enumerate(weekday_dfs):  # Check for time distance
-                series_name = 'p' + str(p) + 'w' + str(w)
-                len_list = list(map(lambda df: len(df), weekday_df_list))
-                med_i = np.argsort(len_list)[len(len_list)//2]
-                orient_df = weekday_df_list[med_i]
-                for index, row in orient_df.iterrows():
-                    print(weekday_df_list[0])
-                    print(weekday_df_list[0].index.get_loc(index, method='nearest'))
-                    print(list(map(lambda df: df.index.get_loc(index, method='nearest'), weekday_df_list)))
-                    # np.average(list(map(lambda df: df.at_time(index),weekday_df_list)))
-                # seasonal_data[series_name] =
-
-                # print(list(map(lambda df : len(df), weekday_df_list)))
+        for p, df_weekdays in enumerate(weekday_dfs_phases):
+            # with pd.option_context('display.max_rows', None, 'display.max_columns', None):
+            #     print(df_weekdays.isna().sum())
+            df_weekdays['med'] = df_weekdays.median()
+            print(df_weekdays) #  Save to pickle
 
 
 
