@@ -36,6 +36,13 @@ def plot_phase_dif(df_p_day, p_counter):
     return len(transgressions) > 1
 
 
+def plot_seasonal_dif(df_p_day, p_counter):
+    transgressions = list(np.where(abs(df_p_day.SeasDif) > 4)[0])
+    df_p_day.Value.plot(figsize=(24, 6), linewidth=l_width, markevery=transgressions, marker='o',
+                        markerfacecolor='black', label="phase" + str(p_counter))
+    return len(transgressions) > 1
+
+
 def plot_day(plot_directory, df_phases_day, sdp_name, start_time):
     sdp_directory = plot_directory / sdp_name
     if not os.path.exists(sdp_directory):
@@ -50,7 +57,7 @@ def plot_day(plot_directory, df_phases_day, sdp_name, start_time):
         if not df_p_day.empty:
             # print(list(np.array(np.where(abs(df_p_day.row_dif) > 1)[0])))
             # relevant_plot = plot_spannungsband(df_p_day, p_counter)
-            relevant_plot = plot_phase_dif(df_p_day, p_counter)
+            relevant_plot = plot_seasonal_dif(df_p_day, p_counter)
         p_counter = p_counter +1
     legend = plt.legend(fontsize='x-large', loc='lower left')
 
@@ -101,7 +108,7 @@ def plot_pickle2(pickle_directory, plot_directory):
 
 def main():
     pickle_directory = Path("testPickles")
-    plot_directory = Path("plots") / "PhaseDif1_5"
+    plot_directory = Path("plots") / "SeasDif4"
     print(pickle_directory)
     plot_pickle2(pickle_directory, plot_directory)
 
