@@ -1,0 +1,12 @@
+1. Data auf TimeStamp, Value, Station, und Phase reduzieren
+2. Anomalieerkennungswerte wie Phasen-, Stationsdifferen, Steigung, Abstand zum Spannungsband, und Abstand zum saissonalen Durchschnitt hinzufügen -> Mehr desso besser
+
+3. PCA ausführen
+4. Unsupervised anormale Werte erkennen
+5. Supervised klassifizieren.
+
+6. Prozentsatz erkannter/ falscher Anomalien ausrechnen
+
+
+Probleme 4:
+Unterschiedlich starke Anomalienansammlungen (Spannungsbandüberschreitung vs. A) -> Kann Spannugnsbandüberschreitung unsupervised erkannt werden?

@@ -58,6 +58,7 @@ def add_help_data(pickle_dir=Path('pickles')):
         print("Opened pickle")
         phase_values = pd.DataFrame()
         for i, df_p in enumerate(df_phases):
+            df_p.drop(columns=['Unit', 'AliasName'], inplace=True)
             phase = 'p' + str(i+1)
             phase_values[phase] = df_p.Value
         for df_p in df_phases:
@@ -72,7 +73,8 @@ def add_help_data(pickle_dir=Path('pickles')):
             df_p['phase_dif'] = phase_values['max_dif']
         print("Assigned help data")
         for i, df_p in enumerate(df_phases):
-            df_p.to_pickle(path / ("h_phase"+str(i)))
+            print(df_p)
+            df_p.to_pickle(path / ("h_phase"+str(i+1)))
 
 
 def add_seasonal_data(pickle_dir=Path('pickles')):
@@ -83,48 +85,105 @@ def add_seasonal_data(pickle_dir=Path('pickles')):
     for path in file_paths:
         print(path)
         path = pickle_dir / Path(path)
-        df_phases = list(map(lambda p: pd.read_pickle(path / ("phase" + p)), ['1', '2', '3']))
-        weekday_dfs_phases = list(map(lambda p: list(map(lambda w: [], range(7))), range(3)))
+        df_phases = list(map(lambda p: pd.read_pickle(path / ("phase" + p))[['Value']], ['1', '2', '3']))
+        weekday_dfs_phases = [[None for x in range(7)] for y in range(3)]
         min_date = min(list(map(lambda df: df.index.min(), df_phases))).date()
         max_date = max(list(map(lambda df: df.index.max(), df_phases))).date()
         for p, df_p in enumerate(df_phases):
-            phase = 'p' + str(p+1)
             for start_time in pd.date_range(min_date, max_date, freq='d'):
-                phase_day = phase + '_' + str(start_time.date())
                 end_time = start_time + day
                 df_p_day = df_p.loc[start_time:end_time]
-                weekday = start_time.weekday()
-                weekday_df = weekday_dfs_phases[p][weekday]
-                df_p_day = df_p_day.set_index(df_p_day.index.time)
-                weekday_df.append(df_p_day)
+                df_p_day_med = df_p_day.resample('30s').median().rename(columns={'Value': str(start_time.date())})
+                df_p_day_med.index = df_p_day_med.index.time
+                weekday = start_time.date().weekday()
+                # print(weekday_dfs_phases[p][weekday])
+                if weekday_dfs_phases[p][weekday] is None:
+                    weekday_df = df_p_day_med
+                    weekday_dfs_phases[p][weekday] = weekday_df
+                else:
+                    weekday_df = weekday_dfs_phases[p][weekday]
+                    weekday_df = weekday_df.join(df_p_day_med, how='outer')
+                    weekday_dfs_phases[p][weekday] = weekday_df
         print("Split DF")
+        for p, df_weekdays in enumerate(weekday_dfs_phases):
+            for w, df in enumerate(df_weekdays):
+                df['med'] = df.median(axis=1)
+                #  print(df)
+        df_phases_h = list(map(lambda p: pd.read_pickle(path / ("h_phase" + p)), ['1', '2', '3']))
+        print(df_phases_h)
+        for p, df_p in enumerate(df_phases_h):
+            print(p)
+            df_weekdays = weekday_dfs_phases[p]
+            df_p['SeasDif'] = df_p.apply(lambda row: (row['Value'] - df_weekdays[row.name.weekday()].loc[
+                (row.name - datetime.timedelta(seconds=row.name.second % 30,
+                                               microseconds=row.name.microsecond)).time()]['med']), axis=1)
+            #df_p['SeasDif'] = df_p.apply(lambda row: abs(row['Value']- df_weekdays[row.name.weekday()].loc[row.name.time()]), axis=1)
+            print(df_p)
+            df_p.to_pickle(path / ("h_phase" + str(p + 1)))
+
+
+def add_cross_station_data(pickle_dir=Path('pickles')):
+    station_avgs = pd.DataFrame()
+    file_paths = os.listdir(pickle_dir)
+    print(file_paths)
+    day = pd.Timedelta('1d')
+    for path in file_paths:
+        station_name = path
+        print(path)
+        path = pickle_dir / Path(path)
+        df_phases = pd.DataFrame()
+        for p, df_p in enumerate(list(map(lambda p: pd.read_pickle(path / ("phase" + p))[['Value']], ['1', '2', '3']))):
+            df_phases = df_phases.join(other=df_p.rename(columns={'Value': 'ValueP'+str(p+1)}), how='outer')
+        df_phases = df_phases.resample('30s').mean()
+        df_phases[station_name] = df_phases.mean(axis=1)
+        station_avgs = station_avgs.join(df_phases[[station_name]], how='outer')
+    station_avgs = station_avgs.median(axis=1)
+    print(station_avgs)
+    for path in file_paths:
+        print(path)
+        path = pickle_dir / Path(path)
+        df_phases = list(map(lambda p: pd.read_pickle(path / ("h_phase" + p)), ['1', '2', '3']))
         for p, df_p in enumerate(df_phases):
-            weekday_dfs = weekday_dfs_phases[p]
-            for w, weekday_df_list in enumerate(weekday_dfs):  # Check for time distance
-                series_name = 'p' + str(p) + 'w' + str(w)
-                len_list = list(map(lambda df: len(df), weekday_df_list))
-                med_i = np.argsort(len_list)[len(len_list)//2]
-                orient_df = weekday_df_list[med_i]
-                for index, row in orient_df.iterrows():
-                    print(weekday_df_list[0])
-                    print(weekday_df_list[0].index.get_loc(index, method='nearest'))
-                    print(list(map(lambda df: df.index.get_loc(index, method='nearest'), weekday_df_list)))
-                    # np.average(list(map(lambda df: df.at_time(index),weekday_df_list)))
-                # seasonal_data[series_name] =
-
-                # print(list(map(lambda df : len(df), weekday_df_list)))
-
-
+            print(p)
+            print(df_p)
+            v1s = []
+            for index, row in df_p.iterrows():
+                v1 = row['Value'] - station_avgs.loc[index - datetime.timedelta(seconds=index.second % 30,
+                                                     microseconds=index.microsecond)]
+                v1s.append(v1)
+            df_p['StationDif'] = v1s
+            # df_p.apply(lambda row:print(row), axis=1)
+            # df_p['StationDif'] = df_p.apply(lambda row: (row['Value'] - station_avgs.loc[
+            #     (row.name - datetime.timedelta(seconds=row.name.second % 30,
+            #                                         microseconds=row.name.microsecond)).time()]), axis=1)
+            print(df_p)
+            df_p.to_pickle(path / ("h_phase" + str(p + 1)))
 
 
+
+
+def drop_useless_labels(pickle_dir=Path('pickles')):
+    seasonal_data = pd.DataFrame()
+    file_paths = os.listdir(pickle_dir)
+    print(file_paths)
+    day = pd.Timedelta('1d')
+    for path in file_paths:
+        path = pickle_dir / Path(path)
+        df_phases_h = list(map(lambda p: pd.read_pickle(path / ("h_phase" + p)), ['1', '2', '3']))
+        for p, df_p in enumerate(df_phases_h):
+            df_p.drop(columns=['Unit', 'AliasName'], inplace=True)
+            df_p.to_pickle(path / ("h_phase" + str(p + 1)))
+
+# with pd.option_context('display.max_rows', None, 'display.max_columns', None):
+#     print(df_weekdays.isna().sum())
 def main():
     datasets_dir = Path('FiN-Messdaten-LV_Spannung_Teil2')
     pickle_dir = Path('pickles')
+    # drop_useless_labels('testPickles')
     # pickle_directory(datasets_dir, pickle_dir)
-    add_seasonal_data('testPickles')
-    # add_help_data(pickle_dir)
-    # pickle_directory(r'/home/joelhaubold/Dokumente/BADaten/FiN-Messdaten-LV_Spannung_Teil2')
-    # pickle_directory(r'C:\Users\joelh\PycharmProjects\Netzzustandsmessung\FiN-Messdaten-LV_Spannung_Teil2')
+    # add_seasonal_data(pickle_dir)
+    add_cross_station_data(pickle_dir)
+    #  add_help_data(pickle_dir)
 
 
 main()
