@@ -5,6 +5,7 @@ import os
 import time
 import numpy as np
 from pathlib import Path
+import logarithmoforecast
 
 
 l_width = 0.9
@@ -43,7 +44,7 @@ def plot_seasonal_dif(df_p_day, p_counter):
     return len(transgressions) > 1
 
 def plot_station_dif(df_p_day, p_counter):
-    transgressions = list(np.where(abs(df_p_day.StationDif) > 4)[0])
+    transgressions = list(np.where(abs(df_p_day.StationDif) > 6)[0])
     df_p_day.Value.plot(figsize=(24, 6), linewidth=l_width, markevery=transgressions, marker='o',
                         markerfacecolor='black', label="phase" + str(p_counter))
     return len(transgressions) > 1
@@ -63,7 +64,7 @@ def plot_day(plot_directory, df_phases_day, sdp_name, start_time):
         if not df_p_day.empty:
             # print(list(np.array(np.where(abs(df_p_day.row_dif) > 1)[0])))
             # relevant_plot = plot_spannungsband(df_p_day, p_counter)
-            relevant_plot = plot_station_dif(df_p_day, p_counter)
+            relevant_plot = plot_trafostufung(df_p_day, p_counter)
         p_counter = p_counter +1
     legend = plt.legend(fontsize='x-large', loc='lower left')
 
@@ -83,6 +84,7 @@ def plot_pickle2(pickle_directory, plot_directory):
     file_paths = os.listdir(pickle_directory)
     print(file_paths)
     for path in file_paths:
+        print(path)
         path = pickle_directory / Path(path)
         df_1 = pd.read_pickle(path / "phase1")
         # print(df_1)
@@ -108,13 +110,13 @@ def plot_pickle2(pickle_directory, plot_directory):
             end_time = start_time + day
             # df_day = df.loc[df.index>start_time and df.index<end_time, :]
             df_phases_day = list(map(lambda df: df.loc[start_time:end_time], df_phases))
-            print(start_time.date())
+            # print(start_time.date())
             plot_day(plot_directory, df_phases_day, path.name, str(start_time.date()))
 
 
 def main():
     pickle_directory = Path("testPickles")
-    plot_directory = Path("plots") / "StationDif4"
+    plot_directory = Path("plots") / "Trafostufung1"
     print(pickle_directory)
     plot_pickle2(pickle_directory, plot_directory)
 
