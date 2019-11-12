@@ -1,4 +1,7 @@
+#ToDO: Anomalienlabeling: 5%? der stärksten Abweichungen als Anomalien -> Alle Anomalien erzeugen und überprüfen ob sinnvoll
+
 1. Data auf TimeStamp, Value, Station, und Phase reduzieren
+Index|P1|P2|P3|Gradient|MaxPhaseDif|StationDif|logarithmodForecastGEns...
 2. Anomalieerkennungswerte wie Phasen-, Stationsdifferen, Steigung, Abstand zum Spannungsband, und Abstand zum saissonalen Durchschnitt hinzufügen -> Mehr desso besser
 
 3. PCA ausführen
@@ -9,4 +12,4 @@
 
 
 Probleme 4:
-Unterschiedlich starke Anomalienansammlungen (Spannungsbandüberschreitung vs. A) -> Kann Spannugnsbandüberschreitung unsupervised erkannt werden?
+Unterschiedlich starke Anomalienansammlungen (Spannungsbandüberschreitung vs. Trafostufung) -> Kann Spannugnsbandüberschreitung unsupervised erkannt werden?

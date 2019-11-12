@@ -8,3 +8,4 @@ venv/*
 .idea/Netzzustandsmessung.iml
 *.~lock*
 pickles/
+testPickles/
