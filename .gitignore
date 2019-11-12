@@ -7,3 +7,4 @@ venv/*
 .idea/tasks.xml
 .idea/Netzzustandsmessung.iml
 *.~lock*
+pickles/
