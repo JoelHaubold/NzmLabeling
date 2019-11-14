@@ -5,6 +5,7 @@ import os
 import time
 import numpy as np
 from pathlib import Path
+import math
 
 
 l_width = 0.9
@@ -16,6 +17,11 @@ def plot_trafostufung(df_p_day, p_counter):
                         label="phase" + str(p_counter))
     return len(stufungen) > 0
 
+def plot_with_lambda(df_p_day, p_counter, anomaly_criteria):
+    stufungen = list(np.where(anomaly_criteria(df_p_day))[0])
+    df_p_day.Value.plot(figsize=(24, 6), linewidth=l_width, markevery=stufungen, marker='o', markerfacecolor='black',
+                        label="phase" + str(p_counter))
+    return len(stufungen) > 0
 
 
 def plot_without_highlight(df_p_day, p_counter):
@@ -71,7 +77,7 @@ def plot_day(plot_directory, df_phases_day, sdp_name, start_time, df_mean_values
             # relevant_plot = plot_trafostufung(df_p_day, p_counter)
             relevant_plot = plot_method(df_p_day, p_counter)
         p_counter = p_counter + 1
-    #  df_mean_values.plot(figsize=(24, 6), linewidth=0.5, color='grey', label="meanStationAverage")
+    df_mean_values.plot(figsize=(24, 6), linewidth=0.5, color='grey', label="meanStationAverage")
     legend = plt.legend(fontsize='x-large', loc='lower left')
 
     for line in legend.get_lines():
@@ -90,7 +96,7 @@ def plot_heatmap(base_plot_directory, df_phases, sdp_name, anomalie_criteria):
     df_heat_map = []
     for p, df_p in enumerate(df_phases):
         # df_p['spanMaxBool'] = (df_p.Value > 240).astype(int)
-        df_p[sdp_name] = (anomalie_criteria(df_p)).astype(int)
+        df_p[sdp_name] = (np.where(anomalie_criteria(df_p), 1, 0)).astype(int)
         df_month_anomalies = df_p['Value'].resample('MS').sum().rename(columns={'Value': sdp_name})
         df_p = df_p.resample('1d').sum()
         max_a = max(max_a, max(df_p[sdp_name]))
@@ -125,9 +131,11 @@ def plot_heatmap(base_plot_directory, df_phases, sdp_name, anomalie_criteria):
         os.makedirs(base_plot_directory / sdp_name)
     plt.savefig(plot_path)
     plt.close(fig)
-    print(df_phases_add)
-    return df_phases_add, max_a, sdp_name
+    # print(df_phases_add)
+    return df_phases_add, max_a
 
+
+plot_method_to_stations = {}
 
 
 def plot_pickle2(pickle_directory, plot_directory, plot_method, anomalie_criteria):
@@ -136,7 +144,7 @@ def plot_pickle2(pickle_directory, plot_directory, plot_method, anomalie_criteri
     print(fd)
     file_paths = os.listdir(pickle_directory)
     print(file_paths)
-    #  df_mean_values = pd.read_pickle(Path('pickles') / 'medianStationValues')
+    df_mean_values = pd.read_pickle(Path('medianStationValues'))
     # with pd.option_context('display.max_rows', None, 'display.max_columns', None):
     #     print(df_mean_values)
     max_a = 0
@@ -146,7 +154,7 @@ def plot_pickle2(pickle_directory, plot_directory, plot_method, anomalie_criteri
         print(path)
         path = pickle_directory / Path(path)
         df_phases = list(map(lambda p: pd.read_pickle(path / ("h_phase"+p)), ['1', '2', '3']))
-        df_station_anomalies, max_station_a, sdp_name = plot_heatmap(plot_directory, df_phases, path.name, anomalie_criteria)
+        df_station_anomalies, max_station_a = plot_heatmap(plot_directory, df_phases, path.name, anomalie_criteria)
         max_a = max(max_a,max_station_a)
         station_anomalies_list.append(df_station_anomalies)
         day = pd.Timedelta('1d')
@@ -158,12 +166,12 @@ def plot_pickle2(pickle_directory, plot_directory, plot_method, anomalie_criteri
             end_time = start_time + day
             # df_day = df.loc[df.index>start_time and df.index<end_time, :]
             df_phases_day = list(map(lambda df: df.loc[start_time:end_time], df_phases))
-            df_mean_values_day = None #df_mean_values.loc[start_time:end_time]
+            df_mean_values_day = df_mean_values.loc[start_time:end_time]
 
             # print(start_time.date())
-            plot_day(plot_directory, df_phases_day, path.name, str(start_time.date()), df_mean_values_day, plot_method)
-    fig, axs = plt.subplots(1, number_stations, figsize=(6*number_stations, 8))
-    for n,df_station_anomalies in enumerate(station_anomalies_list):
+            # plot_day(plot_directory, df_phases_day, path.name, str(start_time.date()), df_mean_values_day, plot_method)
+    fig, axs = plt.subplots(1, number_stations, figsize=(7*number_stations, 12))
+    for n, df_station_anomalies in enumerate(station_anomalies_list):
         ax = axs[n]
         ax.set_aspect('equal')
         ax.set_xticks(np.arange(len(df_station_anomalies.columns)))
@@ -172,24 +180,75 @@ def plot_pickle2(pickle_directory, plot_directory, plot_method, anomalie_criteri
         ax.set_yticklabels(df_station_anomalies.index)
         ax.title.set_text(file_paths[n])
         heatmap = ax.pcolormesh(df_station_anomalies, cmap=plt.cm.Reds, alpha=1, vmin=0, vmax=max_a)
+    anomalies_per_station = list(map(lambda df: df.sum().sum(), station_anomalies_list))
+    df = station_anomalies_list[0]
+    plot_method_to_stations[plot_directory.name] = anomalies_per_station
     fig.colorbar(heatmap, ax=axs.ravel().tolist())
+    print('saving')
     plt.savefig(plot_directory / 'station_anomalies')
     plt.close(fig)
 
-def main():
-    pickle_directory = Path("testPickles")
 
+def plot_pickle_quantile(pickle_directory, plot_directory, plot_method, anomalie_criteria):
+    fd = os.listdir('.')
+    print(plot_directory)
+    print(fd)
+    file_paths = os.listdir(pickle_directory)
+    print(file_paths)
+    df_mean_values = pd.read_pickle(Path('medianStationValues'))
+    # with pd.option_context('display.max_rows', None, 'display.max_columns', None):
+    #     print(df_mean_values)
+    for path in file_paths:
+        print(path)
+        path = pickle_directory / Path(path)
+        df_phases = list(map(lambda p: pd.read_pickle(path / ("h_phase" + p)), ['1', '2', '3']))
+        day = pd.Timedelta('1d')
+        min_date = min(list(map(lambda df: df.index.min(), df_phases))).date()
+        max_date = max(list(map(lambda df: df.index.max(), df_phases))).date()
+        print(min_date)
+        print(max_date)
+        for start_time in pd.date_range(min_date, max_date, freq='d'):
+            end_time = start_time + day
+            # df_day = df.loc[df.index>start_time and df.index<end_time, :]
+            df_phases_day = list(map(lambda df: df.loc[start_time:end_time], df_phases))
+            df_mean_values_day = df_mean_values.loc[start_time:end_time]
+
+            # print(start_time.date())
+            plot_day(plot_directory, df_phases_day, path.name, str(start_time.date()), df_mean_values_day, plot_method)
+
+def main():
+    pickle_directory = Path("pickles")
+
+    file_paths = os.listdir(pickle_directory)
+
+    plot_directory = Path("plots") / "SeasDif3"
+    plot_pickle2(pickle_directory, plot_directory, plot_seasonal_dif, lambda df_p_day: abs(df_p_day.SeasDif) > 3)
     plot_directory = Path("plots") / "Min230"
     plot_pickle2(pickle_directory, plot_directory, plot_spannungsband_min, lambda df_p_day: df_p_day.Value < 230)
     plot_directory = Path("plots") / "Max240"
     plot_pickle2(pickle_directory, plot_directory, plot_spannungsband_max, lambda df_p_day: df_p_day.Value > 240)
     plot_directory = Path("plots") / "PhaseDif1_5"
     plot_pickle2(pickle_directory, plot_directory, plot_phase_dif, lambda df_p_day: df_p_day.phase_dif > 1.5)
-    plot_directory = Path("plots") / "SeasDif3"
-    plot_pickle2(pickle_directory, plot_directory, plot_seasonal_dif, lambda df_p_day: abs(df_p_day.SeasDif) > 3)
     plot_directory = Path("plots") / "StationDif6"
     plot_pickle2(pickle_directory, plot_directory, plot_station_dif, lambda df_p_day: abs(df_p_day.StationDif) > 6)
     plot_directory = Path("plots") / "Trafostufung1"
     plot_pickle2(pickle_directory, plot_directory, plot_trafostufung, lambda df_p_day: abs(df_p_day.row_dif) > 1)
+
+    for plot_method, anomalies_in_station in plot_method_to_stations.items():
+        fig, ax = plt.subplots(1, 1,figsize=(6*len(anomalies_in_station), 12))
+        ax.set_aspect('equal')
+        print(anomalies_in_station)
+        df_anomalies_in_station = pd.DataFrame(data=anomalies_in_station, index=file_paths).transpose()
+        print(df_anomalies_in_station)
+        ax.title.set_text(plot_method)
+        ax.set_xticks(np.arange(len(file_paths)))
+        ax.set_xticklabels(file_paths, ha='left')#, rotation=45)
+        heatmap = ax.pcolormesh(df_anomalies_in_station, cmap=plt.cm.Reds, alpha=1, vmin=0)
+        plt.savefig(Path('plots') / (plot_method+'_anomalie_sum'))
+        plt.close(fig)
+        #i = i + 1
+    # plt.savefig(Path('plots') / 'anomalies')
+    # plt.close(fig)
+
 
 main()
