@@ -3,6 +3,7 @@ from pathlib import Path
 import os
 import numpy as np
 import datetime
+from pickle_plotting import get_file_paths
 
 
 def pickle_directory(datasets_dir, pickle_dir):
@@ -49,7 +50,7 @@ def pickle_directory(datasets_dir, pickle_dir):
 
 
 def add_help_data(pickle_dir=Path('pickles')):
-    file_paths = os.listdir(pickle_dir)
+    file_paths = get_file_paths(pickle_dir)
     print(file_paths)
     for path in file_paths:
         print(path)
@@ -79,7 +80,7 @@ def add_help_data(pickle_dir=Path('pickles')):
 
 def add_seasonal_data(pickle_dir=Path('pickles')):
     seasonal_data = pd.DataFrame()
-    file_paths = os.listdir(pickle_dir)
+    file_paths = get_file_paths(pickle_dir)
     print(file_paths)
     day = pd.Timedelta('1d')
     for path in file_paths:
@@ -123,22 +124,8 @@ def add_seasonal_data(pickle_dir=Path('pickles')):
 
 
 def add_cross_station_data(pickle_dir=Path('pickles')):
-    station_avgs = pd.DataFrame()
-    file_paths = os.listdir(pickle_dir)
-    print(file_paths)
-    day = pd.Timedelta('1d')
-    for path in file_paths:
-        station_name = path
-        print(path)
-        path = pickle_dir / Path(path)
-        df_phases = pd.DataFrame()
-        for p, df_p in enumerate(list(map(lambda p: pd.read_pickle(path / ("phase" + p))[['Value']], ['1', '2', '3']))):
-            df_phases = df_phases.join(other=df_p.rename(columns={'Value': 'ValueP'+str(p+1)}), how='outer')
-        df_phases = df_phases.resample('30s').mean()
-        df_phases[station_name] = df_phases.mean(axis=1)
-        station_avgs = station_avgs.join(df_phases[[station_name]], how='outer')
-    station_avgs = station_avgs.median(axis=1)
-    print(station_avgs)
+    station_avgs = pd.read_pickle(pickle_directory / "meanStationValues")
+    file_paths = get_file_paths(pickle_dir)
     for path in file_paths:
         print(path)
         path = pickle_dir / Path(path)
@@ -160,9 +147,9 @@ def add_cross_station_data(pickle_dir=Path('pickles')):
             df_p.to_pickle(path / ("h_phase" + str(p + 1)))
 
 
-def create_median_pickle(pickle_dir=Path('pickles')):
+def create_mean_pickle(pickle_dir=Path('pickles')):
     station_avgs = pd.DataFrame()
-    file_paths = os.listdir(pickle_dir)
+    file_paths = get_file_paths(pickle_dir)
     print(file_paths)
     day = pd.Timedelta('1d')
     for path in file_paths:
@@ -175,15 +162,14 @@ def create_median_pickle(pickle_dir=Path('pickles')):
         df_phases = df_phases.resample('30s').mean()
         df_phases[station_name] = df_phases.mean(axis=1)
         station_avgs = station_avgs.join(df_phases[[station_name]], how='outer')
-    station_avgs = station_avgs.median(axis=1)
+    station_avgs = station_avgs.mean(axis=1)
     print(station_avgs)
-    station_avgs.to_pickle(pickle_dir / 'medianStationValues')
+    station_avgs.to_pickle(pickle_dir / 'meanStationValues')
 
 
 
 def drop_useless_labels(pickle_dir=Path('pickles')):
-    seasonal_data = pd.DataFrame()
-    file_paths = os.listdir(pickle_dir)
+    file_paths = get_file_paths(pickle_dir)
     print(file_paths)
     day = pd.Timedelta('1d')
     for path in file_paths:
@@ -201,7 +187,7 @@ def main():
     # drop_useless_labels('testPickles')
     # pickle_directory(datasets_dir, pickle_dir)
     # add_seasonal_data(pickle_dir)
-    create_median_pickle(pickle_dir)
+    create_mean_pickle(pickle_dir)
     #  add_help_data(pickle_dir)
 
 

@@ -6,7 +6,9 @@ venv/*
 .idea/usage.statistics.xml
 .idea/tasks.xml
 .idea/Netzzustandsmessung.iml
+.idea/misc.xml
 *.~lock*
 pickles/
 testPickles/
 plots/
+testPlots/
