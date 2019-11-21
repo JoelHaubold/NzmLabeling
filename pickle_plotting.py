@@ -226,7 +226,7 @@ def plot_phase_dif_daywise(pickle_directory, plot_directory):
     file_paths = get_file_paths(pickle_directory)
     print(file_paths)
     df_mean_values = pd.read_pickle(pickle_directory / 'meanStationValues')
-    df_phase_dif_border = pd.read_csv('PhaseDifAnomalieBorder.csv',header=0,index_col=0)['BorderHard']
+    df_phase_dif_border = pd.read_csv('PhaseDifAnomalieBorder.csv',header=None,index_col=0,squeeze=True,)
     print(df_phase_dif_border)
     for path in file_paths:
         print(path)
@@ -253,10 +253,10 @@ def plot_phase_dif_daywise(pickle_directory, plot_directory):
 def plot_pickle_dir(pickle_directory,base_plot_dir):
     # plot_directory = Path("plots") / "SeasDif3"
     # plot_pickle2(pickle_directory, plot_directory, plot_seasonal_dif, lambda df_p_day: abs(df_p_day.SeasDif) > 3)
-    plot_directory = base_plot_dir / "PhaseDifDynamic"
-    plot_phase_dif_daywise(pickle_directory, plot_directory)
-    # plot_directory = Path("plots") / "StationDif6"
-    # plot_pickle2(pickle_directory, plot_directory, plot_station_dif, lambda df_p_day: abs(df_p_day.StationDif) > 6)
+    # plot_directory = base_plot_dir / "PhaseDifDynamic"
+    # plot_phase_dif_daywise(pickle_directory, plot_directory)
+    plot_directory = Path("plots") / "StationDif6"
+    plot_pickle_daywise(pickle_directory, plot_directory, plot_station_dif)
     # plot_directory = base_plot_dir / "Trafostufung1"
     # plot_pickle_daywise(pickle_directory, plot_directory, plot_trafostufung)
 
@@ -278,8 +278,8 @@ def plot_series_hist(pickle_dir,base_plot_dir,column_name):
 
 
 def main():
-    pickle_directory = Path("testPickles")
-    base_plot_dir = Path("testPlots")
+    pickle_directory = Path("pickles")
+    base_plot_dir = Path("plots")
 
     # plot_series_hist(pickle_directory,base_plot_dir,'phase_dif')
 
@@ -299,4 +299,5 @@ def main():
     #     plt.close(fig)
 
 
-main()
+if __name__ == "__main__":
+    main()
