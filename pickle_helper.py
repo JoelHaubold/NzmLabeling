@@ -119,9 +119,30 @@ def add_seasonal_data(pickle_dir=Path('pickles')):
             df_p['SeasDif'] = df_p.apply(lambda row: (row['Value'] - df_weekdays[row.name.weekday()].loc[
                 (row.name - datetime.timedelta(seconds=row.name.second % 30,
                                                microseconds=row.name.microsecond)).time()]['med']), axis=1)
-            #df_p['SeasDif'] = df_p.apply(lambda row: abs(row['Value']- df_weekdays[row.name.weekday()].loc[row.name.time()]), axis=1)
             print(df_p)
             df_p.to_pickle(path / ("h_phase" + str(p + 1)))
+
+
+def add_new_seasonal_data(pickle_dir=Path('pickles')):
+    file_paths = get_file_paths(pickle_dir)
+    for path in file_paths:
+        station_season = pd.read_pickle(pickle_directory / (path+'season_aggregation'))
+        print(path)
+        path = pickle_dir / Path(path)
+        df_phases = list(map(lambda p: pd.read_pickle(path / ("h_phase" + p)), ['1', '2', '3']))
+        for p, df_p in enumerate(df_phases):
+            df_p.drop(labels='SeasDif', inplace=True)
+            print(p)
+            print(df_p)
+            v1s = []
+            for index, row in df_p.iterrows():
+                v1 = row['Value'] - station_season.loc[index - datetime.timedelta(seconds=index.second % 30,
+                                                                                microseconds=index.microsecond)]
+                v1s.append(v1)
+            df_p['SeasDif'] = v1s
+            print(df_p)
+            df_p.to_pickle(path / ("h_phase" + str(p + 1)))
+
 
 
 def add_cross_station_data(pickle_dir=Path('pickles')):
@@ -165,65 +186,17 @@ def create_mean_pickle(pickle_dir=Path('pickles')):
         # print(df_phases[[station_name]])
         # print(station_avgs)
         station_avgs = station_avgs.join(df_phases[[station_name]], how='outer')
+        df_phases[[station_name]].to_pickle(pickle_dir / (str(station_name)+'aggregation'))
     station_avgs = station_avgs.mean(axis=1)
     print(station_avgs)
-    station_avgs.to_pickle(pickle_dir / 'meanStationValues123')
+    station_avgs.to_pickle(pickle_dir / 'meanStationValues')
 
 
 def create_mean_season_pickle(pickle_dir=Path('pickles')):
-    station_avgs = pd.DataFrame()
-    file_paths = get_file_paths(pickle_dir)
-    print(file_paths)
-    day = pd.Timedelta('1d')
-    for path in file_paths:
-        station_name = path
-        print(path)
-        path = pickle_dir / Path(path)
-        df_phases = pd.DataFrame()
-        for p, df_p in enumerate(list(map(lambda p: pd.read_pickle(path / ("phase" + p))[['Value']], ['1', '2', '3']))):
-            df_phases = df_phases.join(other=df_p.rename(columns={'Value': 'ValueP'+str(p+1)}), how='outer')
-        df_phases = lf.generators.add_daytypes(df_phases)
-        df_phases = lf.generators.add_holidays(df_phases,'BW')
-        print('typed_phases_accumulation')
-        df_phases_restday = df_phases[
-            ((df_phases.is_saturday == 1) | (df_phases.is_sunday == 1) | (df_phases.is_holiday == True))]
-        df_phases_workday = df_phases[
-            True ^ ((df_phases.is_saturday == 1) | (df_phases.is_sunday == 1) | (df_phases.is_holiday == True))]
-        print('Split_phases')
-        for df_phases_typeday in [df_phases_restday,df_phases_workday]:
-            df_phases_typeday = df_phases_typeday[['ValueP1','ValueP2','ValueP3']]
-            df_phases_typeday = df_phases_typeday.resample('30s').mean()
-            df_phases_typeday[station_name+"_pre_window"] = df_phases_typeday.mean(axis=1)
-            df_phases_typeday = df_phases_typeday.drop(['ValueP1','ValueP2','ValueP3'],axis=1)
-            df_phases_typeday = df_phases_typeday.dropna()
-            v1s = []
-            min_date = df_phases_typeday.index.min()
-            max_date = df_phases_typeday.index.max()
-            three_w_timedelta = pd.Timedelta('3w')
-            old_window_min_date = min_date.date()
-            for index, row in df_phases_typeday.iterrows():
-                window_min_date = max(min_date, index- three_w_timedelta)
-                window_max_date = min(max_date, index+ three_w_timedelta)
-                if old_window_min_date != window_min_date.date():
-                    print(str(window_min_date)+' -> '+str(window_max_date))
-                    old_window_min_date = window_min_date.date()
-                window_slice = df_phases_typeday.loc[window_min_date:window_max_date]
-                v1 = window_slice.mean()
-                v1s.append(v1)
-            df_phases_typeday[station_name] = v1s
-        df_phases = df_phases_typeday[[station_name]].join(df_phases_workday[[station_name]], how='outer')
-        station_avgs = station_avgs.join(df_phases, how='outer')
-    station_avgs = station_avgs.mean(axis=1)
-    print(station_avgs)
-    station_avgs.to_pickle(pickle_dir / 'meanStationSeasonValues')
-
-
-def create_mean_season_pickle2(pickle_dir=Path('pickles')):
     df_mean_season = pd.Series()
     df_mean_pickle = pd.read_pickle(pickle_dir / 'meanStationValues').to_frame(name='mean_values')
-    print(df_mean_pickle['mean_values'].size)
-    print(len(df_mean_pickle))
-    df_mean_pickle = df_mean_pickle.iloc[:100800]
+    print('len mean_pickle: '+str(len(df_mean_pickle)))
+    # df_mean_pickle = df_mean_pickle.iloc[:100800]
     print(df_mean_pickle)
     column_name = 'windowed_means'
     df_mean_pickle = lf.generators.add_daytypes(df_mean_pickle)
@@ -240,27 +213,78 @@ def create_mean_season_pickle2(pickle_dir=Path('pickles')):
         max_date = df_mean_pickle_typeday.index.max()
         three_w_timedelta = pd.Timedelta('3w')
         old_window_min_date = min_date.date()
+        old_window_max_date = max_date.date()
         print(min_date)
         for index, row in df_mean_pickle_typeday.iterrows():
             window_min_date = max(min_date, index - three_w_timedelta)
             window_max_date = min(max_date, index + three_w_timedelta)
-            if old_window_min_date != window_min_date.date():
-                print(str(window_min_date) + ' -> ' + str(window_max_date))
-                old_window_min_date = window_min_date.date()
             window_slice = df_mean_pickle_typeday.loc[window_min_date:window_max_date]
             v1 = window_slice['mean_values'].mean()
+            if old_window_min_date != window_min_date.date() or old_window_max_date != window_max_date.date():
+                print(str(window_min_date) + ' -> ' + str(window_max_date))
+                old_window_min_date = window_min_date.date()
+                old_window_max_date = window_max_date.date()
+                print(v1)
             v1s.append(v1)
         df_mean_pickle_typeday[column_name] = v1s
+        print('len v1s: '+str(len(v1s)))
         print(df_mean_pickle_typeday[[column_name]])
         print(df_mean_season)
-        df_mean_season = pd.concat([df_mean_season,df_mean_pickle_typeday[column_name]],sort=True)
-        # if i ==0:
-        #     df_mean_pickle_restday = df_mean_pickle_typeday
-        # else:
-        #     df_mean_pickle_workday = df_mean_pickle_typeday
-    print(df_mean_season.size)
+        df_mean_season = pd.concat([df_mean_season,df_mean_pickle_typeday[column_name]], sort=True)
+    print('len mean_season: '+str(df_mean_season.size))
     print(df_mean_season)
     df_mean_season.to_pickle(pickle_dir / 'meanStationSeasonValues')
+
+
+def create_season_pickle(pickle_dir=Path('pickles')):
+    file_paths = get_file_paths(pickle_dir)
+    print(file_paths)
+    for path in file_paths:
+        print(path)
+        station_name = path
+        df_mean_season = pd.Series()
+        df_mean_pickle = pd.read_pickle(pickle_dir / (str(path)+'aggregation'))
+        print('len mean_pickle: ' + str(len(df_mean_pickle)))
+        # df_mean_pickle = df_mean_pickle.iloc[:100800]
+        print(df_mean_pickle)
+        column_name = 'windowed_means'
+        df_mean_pickle = lf.generators.add_daytypes(df_mean_pickle)
+        df_mean_pickle = lf.generators.add_holidays(df_mean_pickle, 'BW')
+        df_mean_pickle_restday = df_mean_pickle[
+            ((df_mean_pickle.is_saturday == 1) | (df_mean_pickle.is_sunday == 1) | (df_mean_pickle.is_holiday == True))]
+        df_mean_pickle_workday = df_mean_pickle[
+            True ^ ((df_mean_pickle.is_saturday == 1) | (df_mean_pickle.is_sunday == 1) | (
+                        df_mean_pickle.is_holiday == True))]
+        print('Split_dataframe')
+        for i, df_mean_pickle_typeday in enumerate([df_mean_pickle_restday, df_mean_pickle_workday]):
+            df_mean_pickle_typeday = df_mean_pickle_typeday[[station_name]].dropna()
+            v1s = []
+            min_date = df_mean_pickle_typeday.index.min()
+            max_date = df_mean_pickle_typeday.index.max()
+            three_w_timedelta = pd.Timedelta('3w')
+            old_window_min_date = min_date.date()
+            old_window_max_date = max_date.date()
+            print(min_date)
+            for index, row in df_mean_pickle_typeday.iterrows():
+                window_min_date = max(min_date, index - three_w_timedelta)
+                window_max_date = min(max_date, index + three_w_timedelta)
+                window_slice = df_mean_pickle_typeday.loc[window_min_date:window_max_date]
+                window_slice = window_slice.loc[window_slice.index.time == index.time]
+                v1 = window_slice[station_name].mean()
+                if old_window_min_date != window_min_date.date() or old_window_max_date != window_max_date.date():
+                    print(str(window_min_date) + ' -> ' + str(window_max_date))
+                    old_window_min_date = window_min_date.date()
+                    old_window_max_date = window_max_date.date()
+                    print(v1)
+                v1s.append(v1)
+            df_mean_pickle_typeday[column_name] = v1s
+            print('len v1s: ' + str(len(v1s)))
+            print(df_mean_pickle_typeday[[column_name]])
+            print(df_mean_season)
+            df_mean_season = pd.concat([df_mean_season, df_mean_pickle_typeday[column_name]], sort=True)
+        print('len mean_season: ' + str(df_mean_season.size))
+        print(df_mean_season)
+        df_mean_season.to_pickle(pickle_dir / (str(path)+'season_aggregation'))
 
 
 def drop_useless_labels(pickle_dir=Path('pickles')):
@@ -274,16 +298,16 @@ def drop_useless_labels(pickle_dir=Path('pickles')):
             df_p.drop(columns=['Unit', 'AliasName'], inplace=True)
             df_p.to_pickle(path / ("h_phase" + str(p + 1)))
 
+
 # with pd.option_context('display.max_rows', None, 'display.max_columns', None):
 #     print(df_weekdays.isna().sum())
 def main():
     print('pickle_helper')
     datasets_dir = Path('FiN-Messdaten-LV_Spannung_Teil2')
     pickle_dir = Path('testPickles')
-    # drop_useless_labels('testPickles')
-    # pickle_directory(datasets_dir, pickle_dir)
-    create_mean_season_pickle2(pickle_dir)
-    #  add_help_data(pickle_dir)
+    #  pickle_directory(datasets_dir, pickle_dir)
+    create_season_pickle()
+
 
 if __name__ == "__main__":
     main()

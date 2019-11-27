@@ -49,7 +49,7 @@ def calculate_phase_distance(df_phases, df_sdp):
 
 
 def calculate_anomalies(pickle_directory, excel_file_path):
-    print(os.getcwd())
+    # print(os.getcwd())
     file_paths = os.listdir(pickle_directory)
     print(file_paths)
 
@@ -68,8 +68,6 @@ def calculate_anomalies(pickle_directory, excel_file_path):
 
 
 def main():
-    x = np.array([2,5,7,3],[1,3,90,8],[5,3,8,9])
-    print(x.amax(0))
     pickle_directory = Path("testPickles")
     excel_file_path = Path("test.xlsx")
     # calculate_anomalies(pickle_directory, excel_file_path)
