@@ -200,7 +200,7 @@ def create_mean_season_pickle(pickle_dir=Path('pickles')):
     print(df_mean_pickle)
     column_name = 'windowed_means'
     df_mean_pickle = lf.generators.add_daytypes(df_mean_pickle)
-    df_mean_pickle = lf.generators.add_holidays(df_mean_pickle, 'BW')
+    df_mean_pickle = lf.generators.add_holidays(df_mean_pickle, 'NW')
     df_mean_pickle_restday = df_mean_pickle[
         ((df_mean_pickle.is_saturday == 1) | (df_mean_pickle.is_sunday == 1) | (df_mean_pickle.is_holiday == True))]
     df_mean_pickle_workday = df_mean_pickle[
@@ -265,16 +265,18 @@ def create_season_pickle(pickle_dir=Path('pickles')):
             old_window_min_date = min_date.date()
             old_window_max_date = max_date.date()
             print(min_date)
+
             for index, row in df_mean_pickle_typeday.iterrows():
                 window_min_date = max(min_date, index - three_w_timedelta)
                 window_max_date = min(max_date, index + three_w_timedelta)
                 window_slice = df_mean_pickle_typeday.loc[window_min_date:window_max_date]
-                window_slice = window_slice.loc[window_slice.index.time == index.time]
+                window_slice = window_slice.loc[window_slice.index.time == index.time()]
                 v1 = window_slice[station_name].mean()
                 if old_window_min_date != window_min_date.date() or old_window_max_date != window_max_date.date():
                     print(str(window_min_date) + ' -> ' + str(window_max_date))
                     old_window_min_date = window_min_date.date()
                     old_window_max_date = window_max_date.date()
+                    print(window_slice)
                     print(v1)
                 v1s.append(v1)
             df_mean_pickle_typeday[column_name] = v1s
