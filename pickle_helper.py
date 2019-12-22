@@ -249,7 +249,7 @@ def create_season_pickle(pickle_dir=Path('pickles')):
         print(df_mean_pickle)
         column_name = 'windowed_means'
         df_mean_pickle = lf.generators.add_daytypes(df_mean_pickle)
-        df_mean_pickle = lf.generators.add_holidays(df_mean_pickle, 'BW')
+        df_mean_pickle = lf.generators.add_holidays(df_mean_pickle, 'NW')
         df_mean_pickle_restday = df_mean_pickle[
             ((df_mean_pickle.is_saturday == 1) | (df_mean_pickle.is_sunday == 1) | (df_mean_pickle.is_holiday == True))]
         df_mean_pickle_workday = df_mean_pickle[
