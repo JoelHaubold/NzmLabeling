@@ -5,7 +5,7 @@ import numpy as np
 import pandas as pd
 import rrcf
 
-plot_directory = Path("rrcf_plots")
+plot_directory = Path("../rrcf_plots")
 
 
 def get_file_names(file_directory):
@@ -40,8 +40,12 @@ def plot_day(df_day, start_time):
 
 
 def plot_anomaly_score(df, anomalie_scores):
-    df['AScore'] = ((anomalie_scores.values - anomalie_scores.values.min()) / (
+    # df.index = anomalie_scores.index
+    as_norm = ((anomalie_scores.values - anomalie_scores.values.min()) / (
                 anomalie_scores.values.max() - anomalie_scores.values.min()))
+    if df.shape[0] > as_norm.__len__():
+        df = df.head(as_norm.__len__())
+    df['AScore'] = as_norm
     print(df)
     day = pd.Timedelta('1d')
     min_date = df.index.min().date()
@@ -63,7 +67,7 @@ def show_anomalies(df, anomalie_scores):
 
 def rrcf_calc(dfs):
     print(dfs)
-    df_merged = dfs[0]
+    df_merged = dfs[0][['phase_dif']]
     min_date = df_merged.index.min()
     df_merged = df_merged[:min_date + pd.Timedelta(days=90)]
     print(df_merged)
@@ -71,19 +75,19 @@ def rrcf_calc(dfs):
     print("num_points: " + str(num_points))
     num_trees = 6000
     tree_size = 1000
-    shingle_size = 24
-
-    points = rrcf.shingle(df_merged.Value, size=shingle_size)
-    points = np.vstack([point for point in points])
-    num_points = points.shape[0]
+    # shingle_size = 24
+    #
+    # points = rrcf.shingle(df_merged.Value, size=shingle_size)
+    # points = np.vstack([point for point in points])
+    # num_points = points.shape[0]
     sample_size_range = (num_points // tree_size, tree_size)
     forest = []
     while len(forest) < num_trees:
         print(len(forest))
         indices = np.random.choice(num_points, size=sample_size_range, replace=False)
 
-        # trees = [rrcf.RCTree(df_merged.iloc[ix], index_labels=ix) for ix in indices]
-        trees = [rrcf.RCTree(points[ix], index_labels=ix) for ix in indices]
+        trees = [rrcf.RCTree(df_merged.iloc[ix], index_labels=ix) for ix in indices]
+        # trees = [rrcf.RCTree(points[ix], index_labels=ix) for ix in indices]
         forest.extend(trees)
 
     avg_codisp = pd.Series(0.0, index=np.arange(num_points))
@@ -93,9 +97,9 @@ def rrcf_calc(dfs):
         avg_codisp[codisp.index] += codisp
         np.add.at(n_owning_trees, codisp.index.values, 1)
     avg_codisp /= n_owning_trees
-    avg_codisp.index = df_merged.Value.iloc[(shingle_size - 1):].index
+    # avg_codisp.index = df_merged.Value.iloc[(shingle_size - 1):].index
     print(avg_codisp)
-    plot_anomaly_score(df_merged, avg_codisp)
+    plot_anomaly_score(dfs[0], avg_codisp)
 
 
 def prep_rrcf(pickle_directory, pickle_names):
@@ -106,16 +110,16 @@ def prep_rrcf(pickle_directory, pickle_names):
         file_names = list(filter(lambda p: p in pickle_names, file_names))
     for f_name in file_names:
         f_path = pickle_directory / Path(f_name)
-        df_phases = list(map(lambda p: pd.read_pickle(f_path / ("h_phase" + p)).loc[:, ['Value']], ['1', '2', '3']))
+        df_phases = list(map(lambda p: pd.read_pickle(f_path / ("h_phase" + p)).loc[:, ['Value', 'phase_dif']], ['1', '2', '3']))
         dfs += df_phases
     rrcf_calc([dfs[0]])
 
     # df = dfs[0]
-    # plot_anomaly_score(df, pd.read_csv("0888_p1_as_10k",index_col=0, squeeze=True, header=None))
+    # plot_anomaly_score(df, pd.read_csv(Path("../rrcf_codisps/0888_p1_90days_24shingle_6000trees"),index_col=0, squeeze=True, header=None))
 
 
 def main():
-    pickle_directory = Path("pickles")
+    pickle_directory = Path("../pickles")
     test_pickle = ['NW000000000000000000000NBSNST0888']
     prep_rrcf(pickle_directory, test_pickle)
 
