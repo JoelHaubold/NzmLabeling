@@ -5,6 +5,7 @@ import numpy as np
 import datetime
 from pickle_plotting import get_file_paths
 import logarithmoforecast as lf
+import holidays
 
 
 def pickle_directory(datasets_dir, pickle_dir):
@@ -41,8 +42,8 @@ def pickle_directory(datasets_dir, pickle_dir):
         df_phase3 = value.loc[pos3, :]
 
         # for phase in ['1', '2', '3']:
-            # if not os.path.exists('pickles/' + key + '/phase'+phase):
-                # os.makedirs('pickles/' + key + '/phase'+phase)
+        # if not os.path.exists('pickles/' + key + '/phase'+phase):
+        # os.makedirs('pickles/' + key + '/phase'+phase)
 
         df_phase1.to_pickle(pickle_dir / key / "phase1")
         df_phase2.to_pickle(pickle_dir / key / "phase2")
@@ -61,7 +62,7 @@ def add_help_data(pickle_dir=Path('pickles')):
         phase_values = pd.DataFrame()
         for i, df_p in enumerate(df_phases):
             df_p.drop(columns=['Unit', 'AliasName'], inplace=True)
-            phase = 'p' + str(i+1)
+            phase = 'p' + str(i + 1)
             phase_values[phase] = df_p.Value
         for df_p in df_phases:
             df_p['row_dif'] = df_p.Value.diff()
@@ -76,7 +77,33 @@ def add_help_data(pickle_dir=Path('pickles')):
         print("Assigned help data")
         for i, df_p in enumerate(df_phases):
             print(df_p)
-            df_p.to_pickle(path / ("h_phase"+str(i+1)))
+            df_p.to_pickle(path / ("h_phase" + str(i + 1)))
+
+
+def update_trafo(pickle_dir=Path('pickles')):
+    # pd.options.mode.chained_assignment = None
+    file_paths = get_file_paths(pickle_dir)
+    print(file_paths)
+    for path in file_paths:
+        print(path)
+        path = pickle_dir / Path(path)
+        df_phases = list(map(lambda p: pd.read_pickle(path / ("h_phase" + p)), ['1', '2', '3']))
+        print("Opened pickle")
+        df_row_difs = pd.DataFrame()
+        for p, df_p in enumerate(df_phases):
+            df_p['row_dif'] = df_p.Value.diff() / df_p.Value.index.to_series().diff().dt.total_seconds()
+            df_row_difs[str(p)] = df_p['row_dif']
+        df_row_difs.loc[True ^ (((df_row_difs['0'] >= 0) & (df_row_difs['1'] >= 0) & (df_row_difs['2'] >= 0)) | (
+                (df_row_difs['0'] < 0) & (df_row_difs['1'] < 0) & (df_row_difs['2'] < 0)))] = 0
+        df_row_difs = df_row_difs.abs()
+        for df_p in df_phases:
+            #  df_p['trafo'] = min(df_phases[0]['row_dif'].abs(), df_phases[1]['row_dif'].abs(), df_phases[2]['row_dif'].abs())
+            df_p['trafo'] = df_row_difs.min(axis=1)
+
+        print("Assigned help data")
+        for i, df_p in enumerate(df_phases):
+            #  print(df_p)
+            df_p.to_pickle(path / ("h_phase" + str(i + 1)))
 
 
 def add_seasonal_data(pickle_dir=Path('pickles')):
@@ -126,23 +153,31 @@ def add_seasonal_data(pickle_dir=Path('pickles')):
 def add_new_seasonal_data(pickle_dir=Path('pickles')):
     file_paths = get_file_paths(pickle_dir)
     for path in file_paths:
-        station_season = pd.read_pickle(pickle_directory / (path+'season_aggregation'))
+        station_season = pd.read_pickle(pickle_dir / (path + 'season_aggregation'))
         print(path)
         path = pickle_dir / Path(path)
         df_phases = list(map(lambda p: pd.read_pickle(path / ("h_phase" + p)), ['1', '2', '3']))
         for p, df_p in enumerate(df_phases):
-            df_p.drop(labels='SeasDif', inplace=True)
+            df_p.drop(labels='SeasDif', inplace=True, errors='ignore')
             print(p)
             print(df_p)
             v1s = []
+            print(station_season)
+            print(station_season.sort_index())
             for index, row in df_p.iterrows():
+                print(row['Value'])
+                print(index)
+                print(index - datetime.timedelta(seconds=index.second % 30,
+                                                 microseconds=index.microsecond))
+                print(station_season.loc[index - datetime.timedelta(seconds=index.second % 30,
+                                                                    microseconds=index.microsecond)])
                 v1 = row['Value'] - station_season.loc[index - datetime.timedelta(seconds=index.second % 30,
-                                                                                microseconds=index.microsecond)]
+                                                                                  microseconds=index.microsecond)]
+                print(v1)
                 v1s.append(v1)
             df_p['SeasDif'] = v1s
             print(df_p)
             df_p.to_pickle(path / ("h_phase" + str(p + 1)))
-
 
 
 def add_cross_station_data(pickle_dir=Path('pickles')):
@@ -158,7 +193,7 @@ def add_cross_station_data(pickle_dir=Path('pickles')):
             v1s = []
             for index, row in df_p.iterrows():
                 v1 = row['Value'] - station_avgs.loc[index - datetime.timedelta(seconds=index.second % 30,
-                                                     microseconds=index.microsecond)]
+                                                                                microseconds=index.microsecond)]
                 v1s.append(v1)
             df_p['StationDif'] = v1s
             # df_p.apply(lambda row:print(row), axis=1)
@@ -180,13 +215,33 @@ def create_mean_pickle(pickle_dir=Path('pickles')):
         path = pickle_dir / Path(path)
         df_phases = pd.DataFrame()
         for p, df_p in enumerate(list(map(lambda p: pd.read_pickle(path / ("phase" + p))[['Value']], ['1', '2', '3']))):
-            df_phases = df_phases.join(other=df_p.rename(columns={'Value': 'ValueP'+str(p+1)}), how='outer')
+            df_phases = df_phases.join(other=df_p.rename(columns={'Value': 'ValueP' + str(p + 1)}), how='outer')
         df_phases = df_phases.resample('30s').mean()
         df_phases[station_name] = df_phases.mean(axis=1)
         # print(df_phases[[station_name]])
         # print(station_avgs)
         station_avgs = station_avgs.join(df_phases[[station_name]], how='outer')
-        df_phases[[station_name]].to_pickle(pickle_dir / (str(station_name)+'aggregation'))
+        df_phases[[station_name]].to_pickle(pickle_dir / (str(station_name) + 'aggregation'))
+    station_avgs = station_avgs.mean(axis=1)
+    print(station_avgs)
+    station_avgs.to_pickle(pickle_dir / 'meanStationValues')
+
+
+def create_mean_street_pickles(pickle_dir=Path('pickles')):
+    station_avgs = pd.DataFrame()
+    file_paths = get_file_paths(pickle_dir)
+    print(file_paths)
+    day = pd.Timedelta('1d')
+    for path in file_paths:
+        station_name = path
+        print(path)
+        path = pickle_dir / Path(path)
+        df_phases = pd.DataFrame()
+        for p, df_p in enumerate(list(map(lambda p: pd.read_pickle(path / ("phase" + p))[['Value']], ['1', '2', '3']))):
+            df_phases = df_phases.join(other=df_p.rename(columns={'Value': 'ValueP' + str(p + 1)}), how='outer')
+        df_phases = df_phases.resample('30s').mean()
+        df_phases[station_name] = df_phases.mean(axis=1)
+        station_avgs = station_avgs.join(df_phases[[station_name]], how='outer')
     station_avgs = station_avgs.mean(axis=1)
     print(station_avgs)
     station_avgs.to_pickle(pickle_dir / 'meanStationValues')
@@ -195,7 +250,7 @@ def create_mean_pickle(pickle_dir=Path('pickles')):
 def create_mean_season_pickle(pickle_dir=Path('pickles')):
     df_mean_season = pd.Series()
     df_mean_pickle = pd.read_pickle(pickle_dir / 'meanStationValues').to_frame(name='mean_values')
-    print('len mean_pickle: '+str(len(df_mean_pickle)))
+    print('len mean_pickle: ' + str(len(df_mean_pickle)))
     # df_mean_pickle = df_mean_pickle.iloc[:100800]
     print(df_mean_pickle)
     column_name = 'windowed_means'
@@ -204,7 +259,8 @@ def create_mean_season_pickle(pickle_dir=Path('pickles')):
     df_mean_pickle_restday = df_mean_pickle[
         ((df_mean_pickle.is_saturday == 1) | (df_mean_pickle.is_sunday == 1) | (df_mean_pickle.is_holiday == True))]
     df_mean_pickle_workday = df_mean_pickle[
-        True ^ ((df_mean_pickle.is_saturday == 1) | (df_mean_pickle.is_sunday == 1) | (df_mean_pickle.is_holiday == True))]
+        True ^ ((df_mean_pickle.is_saturday == 1) | (df_mean_pickle.is_sunday == 1) | (
+                    df_mean_pickle.is_holiday == True))]
     print('Split_dataframe')
     for i, df_mean_pickle_typeday in enumerate([df_mean_pickle_restday, df_mean_pickle_workday]):
         df_mean_pickle_typeday = df_mean_pickle_typeday[['mean_values']].dropna()
@@ -227,11 +283,11 @@ def create_mean_season_pickle(pickle_dir=Path('pickles')):
                 print(v1)
             v1s.append(v1)
         df_mean_pickle_typeday[column_name] = v1s
-        print('len v1s: '+str(len(v1s)))
+        print('len v1s: ' + str(len(v1s)))
         print(df_mean_pickle_typeday[[column_name]])
         print(df_mean_season)
-        df_mean_season = pd.concat([df_mean_season,df_mean_pickle_typeday[column_name]], sort=True)
-    print('len mean_season: '+str(df_mean_season.size))
+        df_mean_season = pd.concat([df_mean_season, df_mean_pickle_typeday[column_name]], sort=True)
+    print('len mean_season: ' + str(df_mean_season.size))
     print(df_mean_season)
     df_mean_season.to_pickle(pickle_dir / 'meanStationSeasonValues')
 
@@ -243,18 +299,31 @@ def create_season_pickle(pickle_dir=Path('pickles')):
         print(path)
         station_name = path
         df_mean_season = pd.Series()
-        df_mean_pickle = pd.read_pickle(pickle_dir / (str(path)+'aggregation'))
+        df_mean_pickle = pd.read_pickle(pickle_dir / (str(path) + 'aggregation'))
         print('len mean_pickle: ' + str(len(df_mean_pickle)))
         # df_mean_pickle = df_mean_pickle.iloc[:100800]
         print(df_mean_pickle)
         column_name = 'windowed_means'
-        df_mean_pickle = lf.generators.add_daytypes(df_mean_pickle)
-        df_mean_pickle = lf.generators.add_holidays(df_mean_pickle, 'NW')
+        # df_mean_pickle = lf.generators.add_daytypes(df_mean_pickle)
+
+        # df_mean_pickle = lf.generators.add_holidays(df_mean_pickle, 'NW')
+        holidays_nrw = list(holidays.DE(years=2017, state='NW').keys())
+        # df_mean_pickle_restday = df_mean_pickle[
+        #     ((df_mean_pickle.is_saturday == 1) | (df_mean_pickle.is_sunday == 1) | (df_mean_pickle.is_holiday == True))]
+        # df_mean_pickle_workday = df_mean_pickle[
+        #     True ^ ((df_mean_pickle.is_saturday == 1) | (df_mean_pickle.is_sunday == 1) | (
+        #                 df_mean_pickle.is_holiday == True))]
+
+        print(holidays_nrw)
+        # test = df_mean_pickle[df_mean_pickle.index.isin(holidays_nrw)]
+        # print(test)
+
         df_mean_pickle_restday = df_mean_pickle[
-            ((df_mean_pickle.is_saturday == 1) | (df_mean_pickle.is_sunday == 1) | (df_mean_pickle.is_holiday == True))]
+            ((df_mean_pickle.index.dayofweek >= 5) | (df_mean_pickle.index).isin(holidays_nrw))
+        ]
         df_mean_pickle_workday = df_mean_pickle[
-            True ^ ((df_mean_pickle.is_saturday == 1) | (df_mean_pickle.is_sunday == 1) | (
-                        df_mean_pickle.is_holiday == True))]
+            True ^ ((df_mean_pickle.index.dayofweek >= 5) | (df_mean_pickle.index).isin(holidays_nrw))
+            ]
         print('Split_dataframe')
         for i, df_mean_pickle_typeday in enumerate([df_mean_pickle_restday, df_mean_pickle_workday]):
             df_mean_pickle_typeday = df_mean_pickle_typeday[[station_name]].dropna()
@@ -286,7 +355,20 @@ def create_season_pickle(pickle_dir=Path('pickles')):
             df_mean_season = pd.concat([df_mean_season, df_mean_pickle_typeday[column_name]], sort=True)
         print('len mean_season: ' + str(df_mean_season.size))
         print(df_mean_season)
-        df_mean_season.to_pickle(pickle_dir / (str(path)+'season_aggregation'))
+        df_mean_season.to_pickle(pickle_dir / (str(path) + 'season_aggregation'))
+
+
+def add_time_gaps(pickle_dir=Path('pickles')):
+    file_paths = get_file_paths(pickle_dir)
+    print(file_paths)
+    day = pd.Timedelta('1d')
+    for path in file_paths:
+        print(path)
+        path = pickle_dir / Path(path)
+        df_phases_h = list(map(lambda p: pd.read_pickle(path / ("h_phase" + p)), ['1', '2', '3']))
+        for p, df_p in enumerate(df_phases_h):
+            df_p['time_passed'] = df_p.index.to_series().diff().dt.total_seconds()
+            df_p.to_pickle(path / ("h_phase" + str(p + 1)))
 
 
 def drop_useless_labels(pickle_dir=Path('pickles')):
@@ -301,6 +383,18 @@ def drop_useless_labels(pickle_dir=Path('pickles')):
             df_p.to_pickle(path / ("h_phase" + str(p + 1)))
 
 
+def cut_dataframe(pickle_name, pickle_dir=Path('pickles')):
+    path = pickle_dir / pickle_name
+    df_phases_h = list(map(lambda p: pd.read_pickle(path / ("h_phase" + p)), ['1', '2', '3']))
+    df_phases = list(map(lambda p: pd.read_pickle(path / ("phase" + p)), ['1', '2', '3']))
+    # for p, df_p in enumerate(df_phases):
+    #     df_p = df_p.loc[pd.datetime(2017, 9, 5, 17, 56):]
+    #     df_p.to_pickle(path / ("phase" + str(p + 1)))
+    # for p, df_p in enumerate(df_phases_h):
+    #     df_p = df_p.loc[pd.datetime(2017, 9, 5, 17, 56):]
+    #     df_p.to_pickle(path / ("h_phase" + str(p + 1)))
+
+
 # with pd.option_context('display.max_rows', None, 'display.max_columns', None):
 #     print(df_weekdays.isna().sum())
 def main():
@@ -308,7 +402,9 @@ def main():
     datasets_dir = Path('FiN-Messdaten-LV_Spannung_Teil2')
     pickle_dir = Path('testPickles')
     #  pickle_directory(datasets_dir, pickle_dir)
-    create_season_pickle()
+    # create_season_pickle()
+    #  add_new_seasonal_data()
+    add_time_gaps()
 
 
 if __name__ == "__main__":

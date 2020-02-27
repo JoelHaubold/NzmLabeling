@@ -11,4 +11,5 @@ venv/*
 pickles/
 testPickles/
 plots/
+rrcf_plots/
 testPlots/
