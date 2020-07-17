@@ -285,15 +285,131 @@ def show_df(pickle_name, pickle_dir=Path('pickles')):
         print(df_p_h[['p1', 'p2', 'p3']])
 
 
+def construct_overview2():
+    file_paths = os.listdir("./../pickles")
+    df_ps = []
+    for fp in file_paths:
+        path = Path("./../pickles") / fp
+        df_phases = list(map(lambda p: pd.read_pickle(path / ("h_phase" + p)), ['1', '2', '3']))
+        df_ps.append(df_phases)
+
+    df_table = pd.DataFrame(columns=["Messungszeitraum [d]", "MA Median [s]", "MA Mean [s]", "Max U [V]",
+                                     "Min U [V]", "Average U [V]"])
+
+    for df_phases in df_ps:
+        time_dif = pd.Series()
+        voltage = pd.Series()
+        for df_p in df_phases:
+            time_dif = time_dif.append(df_p['time_passed'], ignore_index=True)
+            voltage = voltage.append(df_p["Value"], ignore_index=True)
+        med_time_dif = time_dif.median()
+        mean_time_dif = time_dif.mean()
+        voltage_min = min(voltage)
+        voltage_max = max(voltage)
+        voltage_mean = voltage.mean()
+        length = (df_phases[0].index[-1] - df_phases[0].index[0]).days
+        name = df_phases[0]["ServiceDeliveryPoint"][0]
+        name = name[-4:]
+        df_table = df_table.append(pd.Series(name=name,
+                                             data={"MA Median [s]": med_time_dif, "MA Mean [s]":mean_time_dif,
+                                                   "Messungszeitraum [d]": length, "Max U [V]":voltage_max,
+                                                    "Min U [V]":voltage_min, "Average U [V]":voltage_mean}))
+    df_table1 = df_table.copy()
+    df_table.index.name = "Station"
+    # df_t = df_table.astype("object").copy()
+    print("x")
+
+
+def construct_overview():
+    file_paths = os.listdir("./../pickles")
+    df_ps = []
+    for fp in file_paths:
+        path = Path("./../pickles") / fp
+        df_phases = list(map(lambda p: pd.read_pickle(path / ("h_phase" + p)), ['1', '2', '3']))
+        df_ps.append(df_phases)
+
+    n_p = 0
+    df_table = pd.DataFrame(columns=["Datenpunkte", "Sprunga.", "Zeita.", "Phasena.", "Saisona.",
+                                     "Stationsa.", "Messungszeitraum [d]", "Messungsabstand [s]"])
+    tr, ph, st, se, ti = 0, 0, 0, 0, 0
+    for df_phases in df_ps:
+        n_tr = 0
+        n_ph = 0
+        n_st = 0
+        n_se = 0
+        n_ti = 0
+        time_dif = pd.Series()
+        n_p_h = 0
+        for df_p in df_phases:
+            n_tr = n_tr + df_p[abs(df_p['trafo']) > 0.1].shape[0]
+            n_ph = n_ph + df_p[abs(df_p['phase_dif']) > 7.34].shape[0]
+            n_st = n_st + df_p[abs(df_p['StationDif']) > 8.772].shape[0]
+            n_se = n_se + df_p[abs(df_p['SeasDif']) > 5.87].shape[0]
+            n_ti = n_ti + df_p[abs(df_p['time_passed']) > 179].shape[0]
+            n_p = n_p + df_p.shape[0]
+            n_p_h = n_p_h + df_p.shape[0]
+            print(n_tr)
+            time_dif = time_dif.append(df_p['time_passed'], ignore_index=True)
+        med_time_dif = time_dif.median()
+        length = (df_phases[0].index[-1] - df_phases[0].index[0]).days
+        name = df_phases[0]["ServiceDeliveryPoint"][0]
+        name = name[-4:]
+        df_table = df_table.append(pd.Series(name=name,
+                                             data={"Datenpunkte": n_p_h, "Sprunga.": n_tr, "Zeita.": n_ti,
+                                                   "Phasena.": n_ph, "Saisona.": n_se,
+                                                   "Stationsa.": n_st, "Messungsabstand [s]": med_time_dif,
+                                                   "Messungszeitraum [d]": length}))
+        tr, ti, ph, se, st = tr + n_tr, ti + n_ti, ph + n_ph, se + n_se, st + n_st
+    df_table1 = df_table.copy()
+    df_table.drop(columns=["Messungszeitraum [d]", "Messungsabstand [s]"], inplace=True)
+    df_table.index.name = "Station"
+    df_table = df_table.append(pd.Series(name="gesamt", data={"Datenpunkte": n_p, "Sprunga.": tr, "Zeita.": ti,
+                                                              "Phasena.": ph, "Saisona.": se,
+                                                              "Stationsa.": st}))
+    df_table = df_table.append(pd.Series(name="anteil", data={"Datenpunkte": n_p / n_p, "Sprunga.": tr / n_p,
+                                                              "Zeita.": ti / n_p,
+                                                              "Phasena.": ph / n_p, "Saisona.": se / n_p,
+                                                              "Stationsa.": st / n_p}))
+    df_t = df_table.astype("object").copy()
+    df_t.Datenpunkte = df_t.Datenpunkte.astype("int")
+    print("x")
+
+
 def main():
-    pickle_directory = Path("pickles")
-    base_plot_dir = Path("plots")
-    quantile = .999
-    anomaly_threshold = get_quintiles(pickle_directory, quantile)
-    plot_time_dif_anomalies(pickle_directory, base_plot_dir, anomaly_threshold)
+    construct_overview2()
+
+    # pickle_directory = Path("pickles")
+    # base_plot_dir = Path("plots")
+    # quantile = .999
+    # anomaly_threshold = get_quintiles(pickle_directory, quantile)
+    # plot_time_dif_anomalies(pickle_directory, base_plot_dir, anomaly_threshold)
+
+
     # plot_trafo_dif_anomalies_v2(pickle_directory, base_plot_dir, 0.15)
     # plot_trafo_dif_anomalies_v2(pickle_directory, base_plot_dir, 0.1)
     # show_df('NW00000000000BISMARKSTRASSNV04609', pickle_directory)
+
+# df_table = pd.DataFrame
+# ... n_p = 0
+# ... for df_phases in df_ps:
+# ...     n_tr = 0
+# ...     n_ph = 0
+# ...     n_st = 0
+# ...     n_se = 0
+# ...     n_ti = 0
+# ...     time_dif = pd.Series()
+# ...     for df_p in df_ps:
+# ...         n_tr = n_tr + df_p['trafo'] >0.1
+# ...         n_ph = n_ph + df_p['phase_dif'] > 7.34
+# ...         n_st = n_st + df_p['StationDif'] > 8.772
+# ...         n_se = n_se + df_p['SeasDif'] > 8.772
+# ...         n_ti = n_ti + df_p['time_passed'] > 179
+# ...         n_p = n_p + df_p.shape[0]
+# ...         name = df_p["ServiceDeliveryPoint"][0]
+# ...         time_dif.append(df_p['time_passed'], ignore_index=True)
+# ...     med_time_dif = time_dif.median()
+# ...     length = (df_ps[0].index[-1] - df_ps[0].index[0]).days
+# ...     df_table.append(pd.Series(name=name),data= {"Sprunganomalien":n_tr,"Zeitanomalien":n_ti,"Phasenanomalien":n_ph, "Saisonanomalien":n_se, "Stationsanomalien":n_st, "Messungsabstand":med_time_dif, "Anzahl Tage":length})
 
 
 if __name__ == "__main__":
